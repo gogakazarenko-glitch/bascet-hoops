@@ -2,52 +2,58 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="prefetch" href="index.html"><link rel="prefetch" href="tournaments.html"><link rel="prefetch" href="camps.html"><link rel="prefetch" href="academy.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
     <title>СТАТИСТИКА | HOOPS PRO</title>
 </head>
-<body class="bg-[#020617] text-white overflow-x-hidden bg-grid">
+<body class="bg-[#020617] bg-grid">
     <div id="cursor-glow"></div>
-    <div class="fixed top-0 w-full z-[100] bg-blue-600 py-2 overflow-hidden h-[35px] flex items-center border-b border-white/10">
-        <div class="animate-fast-marquee">
-            <span class="mx-4 font-black italic uppercase text-[9px] whitespace-nowrap">📊 ОБНОВЛЕНИЕ: ТОП-10 ИГРОКОВ НЕДЕЛИ • НОВЫЙ РЕКОРД ПО ОЧКАМ • 📊 ОБНОВЛЕНИЕ СТАТИСТИКИ •</span>
-        </div>
-    </div>
-    <nav class="fixed top-[35px] w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/5 h-16 flex items-center">
-        <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-2">
-                <div class="w-7 h-7 bg-blue-600 flex items-center justify-center font-black rounded">H</div>
-                <span class="text-base font-black italic uppercase tracking-tighter">ХУПС<span class="text-blue-600">ПРО</span></span>
-            </a>
-            <div class="hidden md:flex gap-6 text-[10px] font-black uppercase tracking-widest">
-                <a href="index.html" class="hover:text-blue-500 transition">Главная</a>
-                <a href="tournaments.html" class="hover:text-blue-500 transition">Турниры</a>
-                <a href="camps.html" class="hover:text-blue-500 transition">Кэмпы</a>
-                <a href="academy.html" class="hover:text-blue-500 transition">Академия</a>
-                <a href="stats.html" class="text-blue-500">Статистика</a>
+    <div class="marquee-container"><div class="marquee-text"><span class="mx-10 font-black italic uppercase text-[10px]">📊 TOP SCORER: ALEX J. - 34.5 PPG • NEW RECORD BY TEAM "TITANS" • 📊 TOP SCORER: ALEX J. - 34.5 PPG •</span></div></div>
+    <nav>
+        <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center text-white">
+            <a href="index.html" class="flex items-center gap-3"><div class="w-10 h-10 bg-blue-600 flex items-center justify-center font-black rounded-tr-xl rounded-bl-xl">H</div><span class="text-2xl font-black italic uppercase tracking-tighter">ХУПС<span class="text-blue-600">ПРО</span></span></a>
+            <div class="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-widest">
+                <a href="index.html">Главная</a><a href="tournaments.html">Турниры</a><a href="camps.html">Кэмпы</a><a href="stats.html" class="text-blue-500">Статистика</a>
             </div>
-            <button onclick="toggleMenu()" class="md:hidden p-2"><i data-lucide="menu" class="w-5 h-5"></i></button>
-        </div>
-        <div id="mobile-menu" class="hidden absolute top-16 left-0 w-full bg-black/95 backdrop-blur-xl p-6 flex-col gap-5 text-center border-b border-white/10">
-            <a href="index.html" class="text-lg font-black uppercase italic">Главная</a>
-            <a href="tournaments.html" class="text-lg font-black uppercase italic">Турниры</a>
-            <a href="camps.html" class="text-lg font-black uppercase italic">Кэмпы</a>
-            <a href="academy.html" class="text-lg font-black uppercase italic">Академия</a>
-            <a href="stats.html" class="text-lg font-black uppercase italic text-blue-500">Статистика</a>
+            <button onclick="toggleMenu()" class="md:hidden"><i data-lucide="menu"></i></button>
         </div>
     </nav>
-    <main class="pt-[120px] px-6">
-        <div class="grid grid-cols-2 gap-4 max-w-xl mx-auto mb-10">
-            <div class="bg-slate-900/50 p-6 rounded-2xl border border-white/5 text-center">
-                <p class="text-[8px] font-black uppercase text-blue-500 mb-2">Матчи</p>
-                <div class="text-4xl font-black italic counter" data-target="1240">0</div>
+
+    <main class="pt-[160px] max-w-7xl mx-auto px-6 pb-20 text-white">
+        <h2 class="text-6xl md:text-8xl font-black uppercase italic mb-16 reveal">GLOBAL <br> <span class="text-blue-600 font-outline">STATS</span></h2>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+            <div class="bg-slate-900 p-10 rounded-[40px] border border-white/5 reveal">
+                <p class="text-[10px] font-black uppercase text-blue-500 mb-4">Players</p>
+                <div class="text-5xl font-black italic counter" data-target="15420">0</div>
             </div>
-            <div class="bg-slate-900/50 p-6 rounded-2xl border border-white/5 text-center">
-                <p class="text-[8px] font-black uppercase text-blue-500 mb-2">Данки</p>
-                <div class="text-4xl font-black italic counter" data-target="458">0</div>
+            <div class="bg-slate-900 p-10 rounded-[40px] border border-white/5 reveal">
+                <p class="text-[10px] font-black uppercase text-blue-500 mb-4">Points</p>
+                <div class="text-5xl font-black italic counter" data-target="89400">0</div>
+            </div>
+            <div class="bg-slate-900 p-10 rounded-[40px] border border-white/5 reveal">
+                <p class="text-[10px] font-black uppercase text-blue-500 mb-4">Games</p>
+                <div class="text-5xl font-black italic counter" data-target="3200">0</div>
+            </div>
+            <div class="bg-slate-900 p-10 rounded-[40px] border border-white/5 reveal">
+                <p class="text-[10px] font-black uppercase text-blue-500 mb-4">Dunks</p>
+                <div class="text-5xl font-black italic counter" data-target="1250">0</div>
+            </div>
+        </div>
+
+        <div class="bg-slate-900 rounded-[40px] p-10 border border-white/5 reveal">
+            <h3 class="text-2xl font-black uppercase italic mb-10">Leaders Board</h3>
+            <div class="space-y-6">
+                <div class="flex justify-between items-center border-b border-white/5 pb-4">
+                    <span class="font-black italic">1. Alex Jordanov</span>
+                    <span class="text-blue-600 font-black italic">32.4 PPG</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-white/5 pb-4">
+                    <span class="font-black italic">2. Mike Smith</span>
+                    <span class="text-blue-600 font-black italic">28.1 PPG</span>
+                </div>
             </div>
         </div>
     </main>
