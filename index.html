@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>ХУПС ПРО | ГЛАВНАЯ</title>
+</head>
+<body class="bg-[#020617] bg-grid">
+    <div id="cursor-glow"></div>
+
+    <div class="marquee-container">
+        <div class="marquee-text">
+            <span class="mx-10 font-black italic uppercase text-[10px]">🏀 LIVE: НОВЫЙ ТУРНИР ОТКРЫТ • ⚡ РЕГИСТРАЦИЯ В КЭМП • 🏆 СТАТИСТИКА ОБНОВЛЕНА • 🏀 LIVE: НОВЫЙ ТУРНИР ОТКРЫТ • ⚡ РЕГИСТРАЦИЯ В КЭМП • 🏆 СТАТИСТИКА ОБНОВЛЕНА •</span>
+        </div>
+    </div>
+
+    <nav>
+        <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-blue-600 flex items-center justify-center font-black rounded-tr-xl rounded-bl-xl group-hover:rotate-90 transition-all duration-500">H</div>
+                <span class="text-2xl font-black italic uppercase tracking-tighter">ХУПС<span class="text-blue-600">ПРО</span></span>
+            </a>
+            
+            <div class="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-widest">
+                <a href="index.html" class="text-blue-500">Главная</a>
+                <a href="tournaments.html" class="hover:text-blue-500 transition">Турниры</a>
+                <a href="camps.html" class="hover:text-blue-500 transition">Кэмпы</a>
+                <a href="academy.html" class="hover:text-blue-500 transition">Академия</a>
+                <a href="stats.html" class="hover:text-blue-500 transition">Статистика</a>
+            </div>
+
+            <button onclick="toggleMenu()" class="md:hidden text-white p-2">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-black/95 backdrop-blur-2xl flex-col p-8 gap-6 text-center border-b border-white/10 z-[1000]">
+            <a href="index.html" class="text-xl font-black italic uppercase text-blue-500">Главная</a>
+            <a href="tournaments.html" class="text-xl font-black italic uppercase">Турниры</a>
+            <a href="camps.html" class="text-xl font-black italic uppercase">Кэмпы</a>
+            <a href="academy.html" class="text-xl font-black italic uppercase">Академия</a>
+            <a href="stats.html" class="text-xl font-black italic uppercase">Статистика</a>
+        </div>
+    </nav>
+
+    <main class="pt-[180px]">
+        <section class="text-center px-6">
+            <h1 class="text-[14vw] md:text-[10vw] font-black italic uppercase leading-[0.85] reveal">
+                BEYOND <br> <span class="text-blue-600 font-outline">LIMITS</span>
+            </h1>
+            <p class="mt-6 text-slate-500 font-bold uppercase text-[10px] tracking-[0.4em] reveal">Будущее баскетбола уже здесь</p>
+        </section>
+
+        <section class="mt-24 py-10 overflow-hidden border-y border-white/5 bg-white/5">
+            <div class="cards-flow">
+                <div class="min-w-[300px] md:min-w-[450px] h-[250px] bg-slate-900 rounded-[40px] p-10 border border-white/10 relative group overflow-hidden">
+                    <div class="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-100 transition">🏀</div>
+                    <span class="text-blue-600 font-black italic text-xs tracking-widest">CAMPS 2026</span>
+                    <h3 class="text-3xl font-black uppercase italic mt-4">ELITE SKILLS <br> INTENSIVE</h3>
+                </div>
+                
+                <div class="min-w-[300px] md:min-w-[450px] h-[250px] bg-blue-600 rounded-[40px] p-10 relative shadow-[0_0_50px_rgba(37,99,235,0.3)]">
+                    <span class="text-white/70 font-black italic text-xs tracking-widest">LIVE TOURNAMENT</span>
+                    <h3 class="text-3xl font-black uppercase italic mt-4">MOSCOW <br> STREET BATTLE</h3>
+                </div>
+
+                <div class="min-w-[300px] md:min-w-[450px] h-[250px] bg-slate-900 rounded-[40px] p-10 border border-white/10">
+                    <span class="text-blue-600 font-black italic text-xs tracking-widest">ACADEMY</span>
+                    <h3 class="text-3xl font-black uppercase italic mt-4">PRO DRIBBLE <br> MASTERCLASS</h3>
+                </div>
+                
+                <div class="min-w-[300px] md:min-w-[450px] h-[250px] bg-slate-900 rounded-[40px] p-10 border border-white/10">
+                    <h3 class="text-3xl font-black uppercase italic mt-4">ELITE SKILLS <br> INTENSIVE</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
