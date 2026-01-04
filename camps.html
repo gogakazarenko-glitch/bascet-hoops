@@ -12,17 +12,33 @@
     <div id="cursor-glow"></div>
     <div class="marquee-container"><div class="marquee-text"><span class="mx-10 font-black italic uppercase text-[10px]">🏀 CAMP UPDATE: ОСТАЛОСЬ 5 МЕСТ В ДУБАЕ • КЭМП В СОЧИ ОТКРЫТ • 🏀 CAMP UPDATE: ОСТАЛОСЬ 5 МЕСТ В ДУБАЕ •</span></div></div>
     <nav>
-        <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center text-white">
-            <a href="index.html" class="flex items-center gap-3"><div class="w-10 h-10 bg-blue-600 flex items-center justify-center font-black rounded-tr-xl rounded-bl-xl">H</div><span class="text-2xl font-black italic uppercase tracking-tighter">ХУПС<span class="text-blue-600">ПРО</span></span></a>
-            <div class="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-widest">
-                <a href="index.html">Главная</a><a href="tournaments.html">Турниры</a><a href="camps.html" class="text-blue-500">Кэмпы</a><a href="stats.html">Статистика</a>
-            </div>
-            <button onclick="toggleMenu()" class="md:hidden"><i data-lucide="menu"></i></button>
+    <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center text-white">
+        <a href="index.html" class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-blue-600 flex items-center justify-center font-black rounded-tr-xl rounded-bl-xl">H</div>
+            <span class="text-2xl font-black italic uppercase tracking-tighter">ХУПС<span class="text-blue-600">ПРО</span></span>
+        </a>
+        
+        <div class="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-widest">
+            <a href="index.html" class="hover:text-blue-500 transition">Главная</a>
+            <a href="tournaments.html" class="hover:text-blue-500 transition">Турниры</a>
+            <a href="academy.html" class="hover:text-blue-500 transition">Академия</a>
+            <a href="camps.html" class="hover:text-blue-500 transition">Кэмпы</a>
+            <a href="stats.html" class="hover:text-blue-500 transition">Статистика</a>
+            <a href="profile.html" class="hover:text-blue-500 transition">Профиль</a>
         </div>
-        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-black/95 p-8 flex-col gap-6 text-center font-black uppercase italic text-white">
-            <a href="index.html">Главная</a><a href="tournaments.html">Турниры</a><a href="camps.html" class="text-blue-500">Кэмпы</a><a href="stats.html">Статистика</a>
-        </div>
-    </nav>
+
+        <button onclick="toggleMenu()" class="md:hidden text-white"><i data-lucide="menu"></i></button>
+    </div>
+
+    <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-black/95 p-8 flex-col gap-6 text-center text-white font-black uppercase italic z-[1000]">
+        <a href="index.html">Главная</a>
+        <a href="tournaments.html">Турниры</a>
+        <a href="academy.html">Академия</a>
+        <a href="camps.html">Кэмпы</a>
+        <a href="stats.html">Статистика</a>
+        <a href="profile.html">Профиль</a>
+    </div>
+</nav>
 
     <main class="pt-[160px] max-w-7xl mx-auto px-6 pb-20">
         <h2 class="text-6xl md:text-8xl font-black uppercase italic leading-none mb-20 reveal">SKILLS <br> <span class="text-blue-600 font-outline">CAMPS</span></h2>
@@ -45,3 +61,4 @@
     <script src="script.js"></script><script>lucide.createIcons();</script>
 </body>
 </html>
+
