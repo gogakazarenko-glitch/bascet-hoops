@@ -2,46 +2,95 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="prefetch" href="index.html"><link rel="prefetch" href="tournaments.html"><link rel="prefetch" href="camps.html"><link rel="prefetch" href="stats.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
     <title>АКАДЕМИЯ | HOOPS PRO</title>
 </head>
-<body class="bg-[#020617] text-white overflow-x-hidden bg-grid">
+<body class="bg-[#020617] bg-grid">
     <div id="cursor-glow"></div>
-    <div class="fixed top-0 w-full z-[100] bg-blue-600 py-2 overflow-hidden h-[35px] flex items-center border-b border-white/10">
-        <div class="animate-fast-marquee">
-            <span class="mx-4 font-black italic uppercase text-[9px] whitespace-nowrap">📖 КУРС: МЕХАНИКА БРОСКА ОТ NBA COACH • ДОСТУПЕН БЕСПЛАТНО 24Ч • 📖 АКАДЕМИЯ ХУПС •</span>
+    
+    <div class="marquee-container">
+        <div class="marquee-text">
+            <span class="mx-10 font-black italic uppercase text-[10px]">📖 НОВЫЙ КУРС: МЕХАНИКА БРОСКА ОТ NBA COACH • ДОСТУПЕН БЕСПЛАТНО ПЕРВЫЙ УРОК • 📖 АКАДЕМИЯ ХУПС •</span>
         </div>
     </div>
-    <nav class="fixed top-[35px] w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/5 h-16 flex items-center">
-        <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-2">
-                <div class="w-7 h-7 bg-blue-600 flex items-center justify-center font-black rounded">H</div>
-                <span class="text-base font-black italic uppercase tracking-tighter">ХУПС<span class="text-blue-600">ПРО</span></span>
-            </a>
-            <div class="hidden md:flex gap-6 text-[10px] font-black uppercase tracking-widest">
-                <a href="index.html" class="hover:text-blue-500 transition">Главная</a>
-                <a href="tournaments.html" class="hover:text-blue-500 transition">Турниры</a>
-                <a href="camps.html" class="hover:text-blue-500 transition">Кэмпы</a>
+
+    <nav>
+        <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center text-white">
+            <a href="index.html" class="flex items-center gap-3"><div class="w-10 h-10 bg-blue-600 flex items-center justify-center font-black rounded-tr-xl rounded-bl-xl">H</div><span class="text-2xl font-black italic uppercase tracking-tighter">ХУПС<span class="text-blue-600">ПРО</span></span></a>
+            <div class="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-widest">
+                <a href="index.html">Главная</a>
+                <a href="tournaments.html">Турниры</a>
                 <a href="academy.html" class="text-blue-500">Академия</a>
-                <a href="stats.html" class="hover:text-blue-500 transition">Статистика</a>
+                <a href="stats.html">Статистика</a>
+                <a href="profile.html">Профиль</a>
             </div>
-            <button onclick="toggleMenu()" class="md:hidden p-2"><i data-lucide="menu" class="w-5 h-5"></i></button>
+            <button onclick="toggleMenu()" class="md:hidden text-white"><i data-lucide="menu"></i></button>
         </div>
-        <div id="mobile-menu" class="hidden absolute top-16 left-0 w-full bg-black/95 backdrop-blur-xl p-6 flex-col gap-5 text-center border-b border-white/10">
-            <a href="index.html" class="text-lg font-black uppercase italic">Главная</a>
-            <a href="tournaments.html" class="text-lg font-black uppercase italic">Турниры</a>
-            <a href="camps.html" class="text-lg font-black uppercase italic">Кэмпы</a>
-            <a href="academy.html" class="text-lg font-black uppercase italic text-blue-500">Академия</a>
-            <a href="stats.html" class="text-lg font-black uppercase italic">Статистика</a>
+        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-black/95 p-8 flex-col gap-6 text-center text-white font-black uppercase italic">
+            <a href="index.html">Главная</a>
+            <a href="tournaments.html">Турниры</a>
+            <a href="academy.html" class="text-blue-500">Академия</a>
+            <a href="stats.html">Статистика</a>
+            <a href="profile.html">Профиль</a>
         </div>
     </nav>
-    <main class="pt-[120px] px-6 text-center">
-        <h1 class="text-[15vw] md:text-[10vw] font-black italic uppercase leading-[0.9] reveal">PRO <br> <span class="text-blue-600">ACADEMY</span></h1>
+
+    <main class="pt-[160px] max-w-7xl mx-auto px-6 pb-20 text-white">
+        <div class="mb-20 reveal">
+            <h2 class="text-6xl md:text-8xl font-black uppercase italic leading-none">PRO <br> <span class="text-blue-600 font-outline">ACADEMY</span></h2>
+            <p class="mt-6 text-slate-500 font-bold uppercase tracking-[0.3em] text-[12px]">Онлайн обучение от лучших тренеров мира</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-slate-900 border border-white/5 rounded-[40px] overflow-hidden group reveal">
+                <div class="h-56 bg-[url('https://images.unsplash.com/photo-1544919982-b61976f0ba43?q=80')] bg-cover grayscale group-hover:grayscale-0 transition duration-700 relative">
+                    <div class="absolute inset-0 bg-blue-600/20 group-hover:bg-transparent transition"></div>
+                    <div class="absolute bottom-4 left-4 bg-black/80 px-4 py-2 rounded-xl backdrop-blur-md text-[10px] font-black uppercase">12 Уроков</div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-black uppercase italic mb-4">Mastering <br> the Jump Shot</h3>
+                    <p class="text-slate-500 text-xs font-bold uppercase leading-relaxed mb-8">Изучи биомеханику идеального броска с пошаговым разбором техники.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-blue-500 font-black italic text-xl">4 900 ₽</span>
+                        <button class="bg-white text-black px-6 py-3 rounded-xl font-black uppercase text-[10px] hover:bg-blue-600 hover:text-white transition">Купить</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 border border-white/5 rounded-[40px] overflow-hidden group reveal">
+                <div class="h-56 bg-[url('https://images.unsplash.com/photo-1504450758481-7338eba7524a?q=80')] bg-cover grayscale group-hover:grayscale-0 transition duration-700 relative">
+                    <div class="absolute bottom-4 left-4 bg-black/80 px-4 py-2 rounded-xl backdrop-blur-md text-[10px] font-black uppercase">8 Уроков</div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-black uppercase italic mb-4">Handles & <br> Ball Control</h3>
+                    <p class="text-slate-500 text-xs font-bold uppercase leading-relaxed mb-8">Курс по дриблингу: контроль мяча в любых ситуациях на площадке.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-blue-500 font-black italic text-xl">3 500 ₽</span>
+                        <button class="bg-white text-black px-6 py-3 rounded-xl font-black uppercase text-[10px] hover:bg-blue-600 hover:text-white transition">Купить</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 border border-white/5 rounded-[40px] overflow-hidden group reveal">
+                <div class="h-56 bg-[url('https://images.unsplash.com/photo-1518063319789-7217e6706b04?q=80')] bg-cover grayscale group-hover:grayscale-0 transition duration-700 relative">
+                    <div class="absolute bottom-4 left-4 bg-black/80 px-4 py-2 rounded-xl backdrop-blur-md text-[10px] font-black uppercase">NEW</div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-black uppercase italic mb-4">Vertical <br> Explosion</h3>
+                    <p class="text-slate-500 text-xs font-bold uppercase leading-relaxed mb-8">Программа увеличения прыжка и взрывной силы для данков.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-blue-500 font-black italic text-xl">5 200 ₽</span>
+                        <button class="bg-white text-black px-6 py-3 rounded-xl font-black uppercase text-[10px] hover:bg-blue-600 hover:text-white transition">Купить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
-    <script src="script.js"></script><script>lucide.createIcons();</script>
+
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>
