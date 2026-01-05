@@ -42,6 +42,36 @@
 
     <main class="pt-[180px] px-6 max-w-7xl mx-auto pb-20">
         <h2 class="text-6xl md:text-8xl font-black uppercase italic reveal">КУЗНИЦА <br> <span class="text-orange-600">ТАЛАНТОВ</span></h2>
+        <section class="mt-20 px-4 md:px-0 reveal active">
+    <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
+        
+        <div class="w-full lg:w-1/2 sale-card p-8 md:p-12 rounded-[40px] relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-orange-600 px-6 py-2 rounded-bl-2xl font-black text-[10px] uppercase italic">Best Seller</div>
+            
+            <span class="text-orange-500 font-black uppercase tracking-[0.3em] text-[10px]">ОНЛАЙН-КУРС</span>
+            <h2 class="text-4xl md:text-5xl font-black uppercase italic mt-4 mb-6 leading-none">БРОСОК <br> <span class="text-orange-600">СНАЙПЕРА</span></h2>
+            
+            <ul class="space-y-4 mb-10">
+                <li class="flex items-center gap-3 text-sm text-slate-300"><i data-lucide="check-circle" class="w-5 h-5 text-orange-600"></i> 24 видео-урока в HD</li>
+                <li class="flex items-center gap-3 text-sm text-slate-300"><i data-lucide="check-circle" class="w-5 h-5 text-orange-600"></i> Разбор твоей техники</li>
+                <li class="flex items-center gap-3 text-sm text-slate-300"><i data-lucide="check-circle" class="w-5 h-5 text-orange-600"></i> Доступ в закрытый чат</li>
+            </ul>
+
+            <div class="flex items-end gap-4">
+                <div class="price-tag font-black italic">4 990₽</div>
+                <div class="text-slate-500 line-through mb-4 font-bold">9 990₽</div>
+            </div>
+
+            <button onclick="openOrderModal('Бросок Снайпера')" class="w-full mt-8 bg-orange-600 py-5 rounded-2xl font-black uppercase italic tracking-widest hover:bg-orange-500 transition-all active:scale-95">
+                ХОЧУ СТАТЬ СНАЙПЕРОМ
+            </button>
+        </div>
+
+        <div class="w-full lg:w-1/2 hidden lg:block">
+            <img src="https://images.unsplash.com/photo-1544919982-b61976f0ba43?q=80" class="rounded-[40px] shadow-2xl shadow-orange-600/20 grayscale hover:grayscale-0 transition duration-700">
+        </div>
+    </div>
+</section>
         <div class="grid md:grid-cols-2 gap-12 mt-20">
             <div class="p-10 bg-slate-900/50 border-l-4 border-orange-600 rounded-r-2xl reveal">
                 <h4 class="text-2xl font-black uppercase italic mb-4 text-orange-500">PRO-Тренировки</h4>
@@ -100,7 +130,34 @@
     // Инициализация иконок Lucide
     lucide.createIcons();
 </script>
+    <div id="order-modal" class="hidden fixed inset-0 z-[300] bg-black/90 backdrop-blur-xl flex items-center justify-center p-4">
+    <div class="bg-[#0f0f0f] border border-orange-600/30 p-10 rounded-[40px] max-w-md w-full relative">
+        <button onclick="closeOrderModal()" class="absolute top-6 right-6 text-slate-500"><i data-lucide="x"></i></button>
+        
+        <h3 class="text-2xl font-black uppercase italic text-center mb-2">ОФОРМИТЬ <span class="text-orange-600">ЗАКАЗ</span></h3>
+        <p id="product-name" class="text-center text-slate-400 text-[10px] uppercase tracking-widest mb-8">КУРС: БРОСОК СНАЙПЕРА</p>
+        
+        <form class="space-y-4">
+            <input type="text" placeholder="ТВОЕ ИМЯ" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white font-bold placeholder:text-slate-600 focus:border-orange-600 outline-none">
+            <input type="text" placeholder="TELEGRAM ИЛИ ТЕЛЕФОН" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white font-bold placeholder:text-slate-600 focus:border-orange-600 outline-none">
+            <button type="submit" class="w-full bg-orange-600 py-4 rounded-xl font-black uppercase italic tracking-widest shadow-lg shadow-orange-600/20 mt-4">ОПЛАТИТЬ ДОСТУП</button>
+        </form>
+    </div>
+</div>
+
+<script>
+function openOrderModal(name) {
+    document.getElementById('product-name').innerText = 'КУРС: ' + name;
+    document.getElementById('order-modal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+function closeOrderModal() {
+    document.getElementById('order-modal').classList.add('hidden');
+    document.body.style.overflow = 'auto';
+}
+</script>
 </body>
 </html>
+
 
 
