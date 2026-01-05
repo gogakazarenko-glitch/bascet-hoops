@@ -102,3 +102,49 @@ body.menu-open main {
     .price-tag { font-size: 2.5rem; }
     .mobile-stack { flex-direction: column !important; }
 }
+
+/* Стили таблиц статистики */
+.stats-table-container {
+    width: 100%;
+    overflow-x: auto; /* Скролл для мобилок */
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 107, 0, 0.1);
+}
+
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; /* Чтобы данные не слипались */
+}
+
+.stats-table th {
+    background: rgba(255, 107, 0, 0.1);
+    color: var(--primary);
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 15px;
+    text-align: left;
+}
+
+.stats-table td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.stats-table tr:hover {
+    background: rgba(255, 107, 0, 0.05);
+}
+
+.rank-badge {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-size: 12px;
+}
