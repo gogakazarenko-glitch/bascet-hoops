@@ -1,64 +1,41 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="style.css">
-    <title>КЭМПЫ | HOOPS PRO</title>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css"><title>КЭМПЫ | ХУПС ПРО</title>
 </head>
-<body class="bg-[#020617] bg-grid">
+<body class="bg-[#050505] bg-grid">
     <div id="cursor-glow"></div>
-    <div class="marquee-container"><div class="marquee-text"><span class="mx-10 font-black italic uppercase text-[10px]">🏀 CAMP UPDATE: ОСТАЛОСЬ 5 МЕСТ В ДУБАЕ • КЭМП В СОЧИ ОТКРЫТ • 🏀 CAMP UPDATE: ОСТАЛОСЬ 5 МЕСТ В ДУБАЕ •</span></div></div>
-    <nav>
-    <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center text-white">
-        <a href="index.html" class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-blue-600 flex items-center justify-center font-black rounded-tr-xl rounded-bl-xl">H</div>
-            <span class="text-2xl font-black italic uppercase tracking-tighter">ХУПС<span class="text-blue-600">ПРО</span></span>
-        </a>
-        
-        <div class="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-widest">
-            <a href="index.html" class="hover:text-blue-500 transition">Главная</a>
-            <a href="tournaments.html" class="hover:text-blue-500 transition">Турниры</a>
-            <a href="academy.html" class="hover:text-blue-500 transition">Академия</a>
-            <a href="camps.html" class="hover:text-blue-500 transition">Кэмпы</a>
-            <a href="stats.html" class="hover:text-blue-500 transition">Статистика</a>
-            <a href="profile.html" class="hover:text-blue-500 transition">Профиль</a>
+    <div class="marquee-container"><div class="marquee-text"><span class="mx-10 uppercase text-[10px] text-white">⛺ ЛЕТНИЙ КЭМП 2026: СОЧИ • ⛺ ЛЕТНИЙ КЭМП 2026: СОЧИ • ⛺ ЛЕТНИЙ КЭМП 2026: СОЧИ • ⛺ ЛЕТНИЙ КЭМП 2026: СОЧИ •</span></div></div>
+
+    <nav class="fixed top-10 left-0 w-full z-50 py-6">
+        <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center text-white">
+            <a href="index.html" class="flex items-center gap-3"><div class="w-10 h-10 bg-orange-600 flex items-center justify-center font-black rounded-tr-xl rounded-bl-xl shadow-lg shadow-orange-600/40">H</div><span class="text-2xl font-black italic uppercase tracking-tighter">ХУПС<span class="text-orange-600">ПРО</span></span></a>
+            <div class="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-widest">
+                <a href="index.html">Главная</a><a href="tournaments.html">Турниры</a><a href="academy.html">Академия</a><a href="camps.html" class="text-orange-500">Кэмпы</a><a href="stats.html">Статистика</a><a href="profile.html">Профиль</a>
+            </div>
+            <button onclick="toggleMenu()" class="md:hidden text-white p-2 bg-orange-600 rounded-lg"><i data-lucide="menu"></i></button>
         </div>
+    </nav>
 
-        <button onclick="toggleMenu()" class="md:hidden text-white"><i data-lucide="menu"></i></button>
-    </div>
-
-    <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-black/95 p-8 flex-col gap-6 text-center text-white font-black uppercase italic z-[1000]">
-        <a href="index.html">Главная</a>
-        <a href="tournaments.html">Турниры</a>
-        <a href="academy.html">Академия</a>
-        <a href="camps.html">Кэмпы</a>
-        <a href="stats.html">Статистика</a>
-        <a href="profile.html">Профиль</a>
-    </div>
-</nav>
-
-    <main class="pt-[160px] max-w-7xl mx-auto px-6 pb-20">
-        <h2 class="text-6xl md:text-8xl font-black uppercase italic leading-none mb-20 reveal">SKILLS <br> <span class="text-blue-600 font-outline">CAMPS</span></h2>
-        
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-slate-900 border border-white/5 rounded-[40px] overflow-hidden group reveal">
-                <div class="h-48 bg-[url('https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80')] bg-cover grayscale group-hover:grayscale-0 transition duration-700"></div>
-                <div class="p-8">
-                    <p class="text-blue-600 font-black text-[10px] uppercase mb-2">Dubai, UAE</p>
-                    <h3 class="text-2xl font-black uppercase italic mb-6">Pro Skill Lab</h3>
-                    <div class="space-y-3 mb-10">
-                        <div class="flex justify-between text-[10px] uppercase font-bold text-slate-500"><span>Длительность:</span> <span class="text-white">10 дней</span></div>
-                        <div class="flex justify-between text-[10px] uppercase font-bold text-slate-500"><span>Цена:</span> <span class="text-white">120 000 ₽</span></div>
-                    </div>
-                    <button class="w-full bg-white text-black py-4 rounded-2xl font-black uppercase text-[10px] hover:bg-blue-600 hover:text-white transition">Забронировать</button>
-                </div>
+    <main class="pt-[180px] px-6 max-w-7xl mx-auto pb-20">
+        <h2 class="text-6xl md:text-8xl font-black uppercase italic leading-none reveal">ИНТЕНСИВ <br> <span class="text-orange-600 font-outline">24/7</span></h2>
+        <div class="mt-20 h-[500px] bg-slate-900 rounded-[50px] relative overflow-hidden reveal">
+            <img src="https://images.unsplash.com/photo-1518063319789-7217e6706b04?q=80" class="absolute inset-0 w-full h-full object-cover opacity-50">
+            <div class="relative z-10 p-12 h-full flex flex-col justify-end">
+                <h3 class="text-4xl font-black uppercase italic">ЭЛИТНЫЙ КЭМП В СОЧИ</h3>
+                <p class="text-slate-300 mt-4 max-w-lg">7 дней полного погружения, 3 тренировки в день, разборы игр и проживание в лучшем спортивном кластере.</p>
+                <button class="mt-8 bg-orange-600 px-10 py-4 rounded-2xl font-black uppercase italic tracking-widest hover:scale-105 transition w-fit">ЗАБРОНИРОВАТЬ МЕСТО</button>
             </div>
         </div>
     </main>
-    <script src="script.js"></script><script>lucide.createIcons();</script>
+
+    <script>
+        function toggleMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); }); });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        lucide.createIcons();
+    </script>
 </body>
 </html>
-
