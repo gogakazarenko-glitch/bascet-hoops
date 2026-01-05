@@ -14,21 +14,37 @@
 </head>
 <body class="bg-black text-white font-sans">
 
-    <nav class="fixed top-0 left-0 w-full z-[100] py-4 bg-black/80 backdrop-blur-md border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-orange-600 flex items-center justify-center font-black rounded-tr-xl rounded-bl-xl text-white">H</div>
-                <span class="text-2xl font-black italic uppercase tracking-tighter">ХУПС<span class="text-orange-600">ПРО</span></span>
-            </a>
-            <div class="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-widest">
-                <a href="index.html" class="hover:text-orange-500 transition">Главная</a>
-                <a href="tournaments.html" class="hover:text-orange-500 transition">Турниры</a>
-                <a href="academy.html" class="hover:text-orange-500 transition">Академия</a>
-                <a href="camps.html" class="text-orange-600">Кэмпы</a>
-                <a href="stats.html" class="hover:text-orange-500 transition">Статистика</a>
-            </div>
+    <nav class="fixed top-0 left-0 w-full z-[1000] py-4 bg-black/60 backdrop-blur-xl border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-3 no-underline">
+            <div class="w-10 h-10 bg-orange-600 flex items-center justify-center font-black rounded-tr-xl rounded-bl-xl text-white shadow-lg shadow-orange-600/30">H</div>
+            <span class="text-2xl font-black italic uppercase tracking-tighter text-white">ХУПС<span class="text-orange-600">ПРО</span></span>
+        </a>
+
+        <div class="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-widest text-white">
+            <a href="index.html" class="hover:text-orange-500 transition">Главная</a>
+            <a href="tournaments.html" class="hover:text-orange-500 transition">Турниры</a>
+            <a href="academy.html" class="hover:text-orange-500 transition">Академия</a>
+            <a href="camps.html" class="text-orange-600">Кэмпы</a>
+            <a href="stats.html" class="hover:text-orange-500 transition">Статистика</a>
         </div>
-    </nav>
+
+        <button id="menu-btn" class="md:hidden text-orange-600 p-2 hover:bg-white/5 rounded-xl transition">
+            <i data-lucide="menu" class="w-8 h-8"></i>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-black z-[2000] flex-col justify-center items-center gap-8 text-4xl font-black uppercase italic p-6">
+        <button id="close-menu" class="absolute top-8 right-8 text-orange-600">
+            <i data-lucide="x" class="w-12 h-12"></i>
+        </button>
+        <a href="index.html" class="text-white">Главная</a>
+        <a href="tournaments.html" class="text-white">Турниры</a>
+        <a href="academy.html" class="text-white">Академия</a>
+        <a href="camps.html" class="text-orange-600">Кэмпы</a>
+        <a href="stats.html" class="text-white">Статистика</a>
+    </div>
+</nav>
 
     <main class="pt-[140px] px-6 max-w-7xl mx-auto pb-20">
         <h2 class="text-5xl md:text-8xl font-black uppercase italic mb-12">BASKETBALL <br> <span class="text-orange-600">CAMPS</span></h2>
@@ -145,5 +161,6 @@
 </script>
 </body>
 </html>
+
 
 
