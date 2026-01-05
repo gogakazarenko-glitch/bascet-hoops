@@ -79,32 +79,39 @@
     const closeBtn = document.getElementById('close-menu');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', () => {
+    // Функция ОТКРЫТИЯ меню
+    function openMenu() {
+        if (mobileMenu) {
             mobileMenu.classList.remove('hidden');
             mobileMenu.classList.add('flex');
-            document.body.style.overflow = 'hidden';
-        });
+            // Добавляем класс 'menu-open' на body, чтобы скрыть контент (теперь CSS это подхватит)
+            document.body.classList.add('menu-open');
+            document.body.style.overflow = 'hidden'; // Запрещаем скролл
+        }
     }
 
-    if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
+    // Функция ЗАКРЫТИЯ меню
+    function closeMenu() {
+        if (mobileMenu) {
             mobileMenu.classList.add('hidden');
             mobileMenu.classList.remove('flex');
-            document.body.style.overflow = 'auto';
-        });
+            // Убираем класс 'menu-open', чтобы контент снова появился
+            document.body.classList.remove('menu-open');
+            document.body.style.overflow = 'auto'; // Разрешаем скролл
+        }
     }
 
-    // Закрытие при клике на ссылку
+    // Вешаем события на кнопки
+    if (menuBtn) menuBtn.addEventListener('click', openMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+    // Закрытие при клике на любую ссылку в меню
     const links = mobileMenu.querySelectorAll('a');
     links.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        });
+        link.addEventListener('click', closeMenu);
     });
 
-    // Анимация появления (Reveal)
+    // Анимация появления элементов при скролле
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) entry.target.classList.add('active');
@@ -112,11 +119,13 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+    // Инициализация иконок Lucide
     lucide.createIcons();
 </script>
    
 </body>
 </html>
+
 
 
 
