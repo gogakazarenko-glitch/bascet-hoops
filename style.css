@@ -77,3 +77,28 @@ body.menu-open main {
 #close-menu {
     z-index: 201 !important;
 }
+
+/* Стили для продающих блоков */
+.sale-card {
+    background: linear-gradient(145deg, #0f0f0f, #050505);
+    border: 1px solid rgba(255, 107, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sale-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 107, 0, 0.1);
+}
+
+.price-tag {
+    font-size: 3.5rem;
+    background: linear-gradient(to bottom, #fff 30%, var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 768px) {
+    .price-tag { font-size: 2.5rem; }
+    .mobile-stack { flex-direction: column !important; }
+}
