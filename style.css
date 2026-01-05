@@ -148,3 +148,30 @@ body.menu-open main {
     border-radius: 6px;
     font-size: 12px;
 }
+
+/* --- НОВЫЕ СТИЛИ ДЛЯ КЭМПОВ И ФАК --- */
+
+/* Контейнер для таблиц и списков */
+.details-box {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 107, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Стили для выпадающих списков (FAQ) */
+details summary::-webkit-details-marker {
+    display: none;
+}
+details[open] summary span {
+    transform: rotate(180deg);
+}
+
+/* Эффект для карточек в Кэмпах */
+.camp-card img {
+    transition: all 0.7s ease;
+}
+.camp-card:hover img {
+    filter: grayscale(0);
+    transform: scale(1.05);
+}
