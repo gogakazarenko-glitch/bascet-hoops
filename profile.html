@@ -1,57 +1,59 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="style.css">
-    <title>ПРОФИЛЬ | ХУПС ПРО</title>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css"><title>ПРОФИЛЬ | ХУПС ПРО</title>
 </head>
-<body class="bg-[#020617] bg-grid text-white">
+<body class="bg-[#050505] bg-grid">
     <div id="cursor-glow"></div>
-    <nav>
-        <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-3"><div class="w-10 h-10 bg-blue-600 flex items-center justify-center font-black rounded-tr-xl rounded-bl-xl">H</div><span class="text-2xl font-black italic uppercase tracking-tighter">ХУПС<span class="text-blue-600">ПРО</span></span></a>
+    <div class="marquee-container"><div class="marquee-text"><span class="mx-10 uppercase text-[10px] text-white">👤 ТВОЙ ПРОГРЕСС • ДО СЛЕДУЮЩЕГО УРОВНЯ 150XP • ПОДТВЕРДИ СВОЙ СТАТУС • 👤 ТВОЙ ПРОГРЕСС • ДО СЛЕДУЮЩЕГО УРОВНЯ 150XP •</span></div></div>
+
+    <nav class="fixed top-10 left-0 w-full z-50 py-6">
+        <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center text-white">
+            <a href="index.html" class="flex items-center gap-3"><div class="w-10 h-10 bg-orange-600 flex items-center justify-center font-black rounded-tr-xl rounded-bl-xl">H</div><span class="text-2xl font-black italic uppercase">ХУПС<span class="text-orange-600">ПРО</span></span></a>
             <div class="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-widest">
-                <a href="index.html">Главная</a><a href="tournaments.html">Турниры</a><a href="academy.html">Академия</a><a href="camps.html">Кэмпы</a><a href="stats.html">Статистика</a><a href="profile.html" class="text-blue-500">Профиль</a>
+                <a href="index.html">Главная</a><a href="tournaments.html">Турниры</a><a href="academy.html">Академия</a><a href="camps.html">Кэмпы</a><a href="stats.html">Статистика</a><a href="profile.html" class="text-orange-500">Профиль</a>
             </div>
-            <button onclick="toggleMenu()" class="md:hidden"><i data-lucide="menu"></i></button>
+            <button onclick="toggleMenu()" class="md:hidden text-white p-2 bg-orange-600 rounded-lg"><i data-lucide="menu"></i></button>
         </div>
     </nav>
 
-    <main class="pt-[140px] max-w-7xl mx-auto px-6 pb-20">
-        <div class="grid md:grid-cols-12 gap-10 items-start">
-            <div class="md:col-span-5 lg:col-span-4 reveal">
-                <div class="bg-gradient-to-b from-blue-600 to-blue-900 rounded-[50px] p-1 overflow-hidden shadow-2xl">
-                    <div class="bg-[#020617] rounded-[48px] p-8 relative overflow-hidden">
-                        <div class="absolute -right-4 -bottom-10 text-[200px] font-black italic opacity-10 text-blue-600">23</div>
-                        <div class="relative z-10 text-center">
-                            <div class="text-6xl font-black italic mb-6">94<span class="text-blue-600 text-xl block uppercase not-italic tracking-widest">ОБЩ</span></div>
-                            <div class="h-64 bg-slate-800 rounded-3xl mb-6 border border-white/5"></div>
-                            <h2 class="text-3xl font-black uppercase italic mb-2">Алекс <br> Козаченко</h2>
-                            <p class="text-blue-600 font-black uppercase text-[10px] mb-8">Разыгрывающий • Москва</p>
-                            <div class="grid grid-cols-3 gap-4 border-t border-white/10 pt-6">
-                                <div><p class="text-[8px] text-slate-500 font-black uppercase">ОЧК</p><p class="text-xl font-black italic">32.4</p></div>
-                                <div><p class="text-[8px] text-slate-500 font-black uppercase">ПОД</p><p class="text-xl font-black italic">8.2</p></div>
-                                <div><p class="text-[8px] text-slate-500 font-black uppercase">ПЕР</p><p class="text-xl font-black italic">12.1</p></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <main class="pt-[180px] px-6 max-w-7xl mx-auto pb-20">
+        <div class="flex flex-col md:flex-row gap-12 items-center reveal">
+            <div class="w-48 h-48 rounded-[40px] border-4 border-orange-600 p-2 shadow-2xl shadow-orange-600/30">
+                <img src="https://images.unsplash.com/photo-1519861531473-9200362146b3?q=80" class="w-full h-full object-cover rounded-[30px]">
             </div>
-            <div class="md:col-span-7 lg:col-span-8 space-y-8 reveal">
-                <div class="bg-slate-900/50 border border-white/5 rounded-[40px] p-10">
-                    <h3 class="text-2xl font-black uppercase italic mb-8">Навыки игрока</h3>
-                    <div class="space-y-6">
-                        <div><div class="flex justify-between mb-2 text-[10px] font-black"><span>ТОЧНОСТЬ БРОСКА</span><span class="text-blue-500">98</span></div><div class="h-2 bg-white/5 rounded-full"><div class="h-full bg-blue-600 w-[98%] shadow-[0_0_10px_#2563eb]"></div></div></div>
-                        <div><div class="flex justify-between mb-2 text-[10px] font-black"><span>ВЛАДЕНИЕ МЯЧОМ</span><span class="text-blue-500">92</span></div><div class="h-2 bg-white/5 rounded-full"><div class="h-full bg-blue-600 w-[92%]"></div></div></div>
-                        <div><div class="flex justify-between mb-2 text-[10px] font-black"><span>ЗАЩИТА</span><span class="text-blue-500">85</span></div><div class="h-2 bg-white/5 rounded-full"><div class="h-full bg-blue-600 w-[85%]"></div></div></div>
-                    </div>
+            <div>
+                <h2 class="text-5xl font-black uppercase italic">ИВАН <span class="text-orange-600 font-outline text-6xl">ПРОФИ</span></h2>
+                <div class="flex gap-4 mt-4 font-black text-[10px] tracking-[0.3em] uppercase">
+                    <span class="bg-orange-600 px-3 py-1 rounded">LVL 42</span>
+                    <span class="border border-orange-600 px-3 py-1 rounded">ELITE SHOOTER</span>
                 </div>
             </div>
         </div>
+        
+        <div class="grid md:grid-cols-3 gap-8 mt-16">
+            <div class="p-8 bg-slate-900 rounded-[30px] border border-white/5 reveal">
+                <p class="text-slate-500 font-black uppercase text-xs">Всего игр</p>
+                <p class="text-4xl font-black italic mt-2">128</p>
+            </div>
+            <div class="p-8 bg-orange-600 rounded-[30px] reveal">
+                <p class="text-white/70 font-black uppercase text-xs">MVP Статус</p>
+                <p class="text-4xl font-black italic mt-2">15 РАЗ</p>
+            </div>
+            <div class="p-8 bg-slate-900 rounded-[30px] border border-white/5 reveal">
+                <p class="text-slate-500 font-black uppercase text-xs">Средний балл</p>
+                <p class="text-4xl font-black italic mt-2">18.5</p>
+            </div>
+        </div>
     </main>
-    <script src="script.js"></script><script>lucide.createIcons();</script>
+
+    <script>
+        function toggleMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); }); });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        lucide.createIcons();
+    </script>
 </body>
 </html>
