@@ -81,30 +81,69 @@
     </div>
 
     <script>
-        function openOrderModal(name) {
-            const m = document.getElementById('order-modal');
-            const p = document.getElementById('product-name');
-            if(m && p) {
-                p.innerText = name;
-                m.classList.remove('hidden');
-                m.classList.add('flex');
-                document.body.style.overflow = 'hidden';
+    // --- КОД ДЛЯ МЕНЮ (БУРГЕРА) ---
+    const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuBtn && mobileMenu) {
+        menuBtn.onclick = () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+            document.body.style.overflow = 'hidden'; // Запрещаем скролл при открытом меню
+        };
+    }
+
+    if (closeBtn && mobileMenu) {
+        closeBtn.onclick = () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+            document.body.style.overflow = 'auto'; // Возвращаем скролл
+        };
+    }
+
+    // --- КОД ДЛЯ ФОРМЫ ЗАКАЗА ---
+    function openOrderModal(name) {
+        const m = document.getElementById('order-modal');
+        const p = document.getElementById('product-name');
+        if(m && p) {
+            p.innerText = name.toUpperCase();
+            m.classList.remove('hidden');
+            m.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function closeOrderModal() {
+        const m = document.getElementById('order-modal');
+        if(m) {
+            m.classList.add('hidden');
+            m.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    // --- КОД ДЛЯ АНИМАЦИИ ПОЯВЛЕНИЯ (REVEAL) ---
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
             }
-        }
-        function closeOrderModal() {
-            const m = document.getElementById('order-modal');
-            if(m) {
-                m.classList.add('hidden');
-                m.classList.remove('flex');
-                document.body.style.overflow = 'auto';
-            }
-        }
-        window.onclick = function(e) {
-            const m = document.getElementById('order-modal');
-            if (e.target == m) closeOrderModal();
-        }
-        lucide.createIcons();
-    </script>
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Закрытие формы по клику на фон
+    window.addEventListener('click', (e) => {
+        const m = document.getElementById('order-modal');
+        if (e.target === m) closeOrderModal();
+    });
+
+    // Инициализация иконок
+    lucide.createIcons();
+</script>
 </body>
 </html>
+
 
