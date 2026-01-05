@@ -6,76 +6,38 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
-    <title>ТУРНИРЫ | HOOPS PRO</title>
+    <title>ТУРНИРЫ | ХУПС ПРО</title>
 </head>
-<body class="bg-[#020617] bg-grid">
+<body class="bg-[#020617] bg-grid text-white">
     <div id="cursor-glow"></div>
-    <div class="marquee-container">
-        <div class="marquee-text">
-            <span class="mx-10 font-black italic uppercase text-[10px]">🏆 РЕГИСТРАЦИЯ: STREET BATTLE MOSCOW • КУБОК ГОРОДА 2026 • 🏆 РЕГИСТРАЦИЯ: STREET BATTLE MOSCOW •</span>
+    <nav>
+        <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3"><div class="w-10 h-10 bg-blue-600 flex items-center justify-center font-black rounded-tr-xl rounded-bl-xl">H</div><span class="text-2xl font-black italic uppercase tracking-tighter">ХУПС<span class="text-blue-600">ПРО</span></span></a>
+            <div class="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-widest">
+                <a href="index.html">Главная</a><a href="tournaments.html" class="text-blue-500">Турниры</a><a href="academy.html">Академия</a><a href="camps.html">Кэмпы</a><a href="stats.html">Статистика</a><a href="profile.html">Профиль</a>
+            </div>
+            <button onclick="toggleMenu()" class="md:hidden"><i data-lucide="menu"></i></button>
         </div>
-    </div>
-   <nav>
-    <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center text-white">
-        <a href="index.html" class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-blue-600 flex items-center justify-center font-black rounded-tr-xl rounded-bl-xl">H</div>
-            <span class="text-2xl font-black italic uppercase tracking-tighter">ХУПС<span class="text-blue-600">ПРО</span></span>
-        </a>
-        
-        <div class="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-widest">
-            <a href="index.html" class="hover:text-blue-500 transition">Главная</a>
-            <a href="tournaments.html" class="hover:text-blue-500 transition">Турниры</a>
-            <a href="academy.html" class="hover:text-blue-500 transition">Академия</a>
-            <a href="camps.html" class="hover:text-blue-500 transition">Кэмпы</a>
-            <a href="stats.html" class="hover:text-blue-500 transition">Статистика</a>
-            <a href="profile.html" class="hover:text-blue-500 transition">Профиль</a>
-        </div>
-
-        <button onclick="toggleMenu()" class="md:hidden text-white"><i data-lucide="menu"></i></button>
-    </div>
-
-    <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-black/95 p-8 flex-col gap-6 text-center text-white font-black uppercase italic z-[1000]">
-        <a href="index.html">Главная</a>
-        <a href="tournaments.html">Турниры</a>
-        <a href="academy.html">Академия</a>
-        <a href="camps.html">Кэмпы</a>
-        <a href="stats.html">Статистика</a>
-        <a href="profile.html">Профиль</a>
-    </div>
-</nav>
+    </nav>
 
     <main class="pt-[160px] max-w-7xl mx-auto px-6 pb-20">
         <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
-            <div>
-                <h2 class="text-6xl md:text-8xl font-black uppercase italic leading-none">ACTIVE <br> <span class="text-blue-600 font-outline">EVENTS</span></h2>
-            </div>
+            <h2 class="text-6xl md:text-8xl font-black uppercase italic leading-none">ЖИВЫЕ <br> <span class="text-blue-600 font-outline">ТУРНИРЫ</span></h2>
             <button class="mt-8 bg-white text-black px-10 py-4 font-black uppercase text-xs hover:bg-blue-600 hover:text-white transition rounded-full">Заявить команду</button>
         </div>
 
         <div class="grid md:grid-cols-2 gap-6">
             <div class="bg-slate-900 border border-white/5 p-8 rounded-[40px] hover:border-blue-600 transition group reveal">
                 <div class="flex justify-between items-start mb-10">
-                    <span class="bg-blue-600 text-[10px] font-black uppercase px-4 py-1 rounded-full">Open Registration</span>
+                    <span class="bg-blue-600 text-[10px] font-black uppercase px-4 py-1 rounded-full">Регистрация открыта</span>
                     <span class="text-slate-500 font-black italic">15.05.2026</span>
                 </div>
-                <h3 class="text-4xl font-black uppercase italic mb-4">Moscow <br> Street Battle</h3>
-                <p class="text-slate-400 text-sm mb-10 uppercase tracking-widest">3x3 • PRO Division • Prize: 100k</p>
+                <h3 class="text-4xl font-black uppercase italic mb-4">Битва <br> Дворов 3х3</h3>
+                <p class="text-slate-400 text-sm mb-10 uppercase tracking-widest">PRO Дивизион • Приз: 100 000 ₽</p>
                 <button class="w-full py-4 border border-white/10 rounded-2xl font-black uppercase text-[10px] group-hover:bg-white group-hover:text-black transition">Подробнее</button>
-            </div>
-
-            <div class="bg-slate-900 border border-white/5 p-8 rounded-[40px] hover:border-blue-600 transition group reveal">
-                <div class="flex justify-between items-start mb-10">
-                    <span class="bg-slate-800 text-[10px] font-black uppercase px-4 py-1 rounded-full">Coming Soon</span>
-                    <span class="text-slate-500 font-black italic">01.06.2026</span>
-                </div>
-                <h3 class="text-4xl font-black uppercase italic mb-4">Summer <br> League Cup</h3>
-                <p class="text-slate-400 text-sm mb-10 uppercase tracking-widest">5x5 • All Levels • Prize: Trophy</p>
-                <button class="w-full py-4 border border-white/10 rounded-2xl font-black uppercase text-[10px] group-hover:bg-white group-hover:text-black transition">Уведомить</button>
             </div>
         </div>
     </main>
-
     <script src="script.js"></script><script>lucide.createIcons();</script>
 </body>
 </html>
-
