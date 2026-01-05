@@ -122,70 +122,43 @@
 
     </div>
 </main>
-   <script>
-    // Функции меню
-    const menuBtn = document.getElementById('menu-btn');
-    const closeBtn = document.getElementById('close-menu');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    function openMenu() {
-        if (mobileMenu) {
-            mobileMenu.classList.remove('hidden');
-            mobileMenu.classList.add('flex');
-            document.body.classList.add('menu-open');
-            document.body.style.overflow = 'hidden';
-        }
-    }
-
-    function closeMenu() {
-        if (mobileMenu) {
-            mobileMenu.classList.add('hidden');
-            mobileMenu.classList.remove('flex');
-            document.body.classList.remove('menu-open');
-            document.body.style.overflow = 'auto';
-        }
-    }
-
-    if (menuBtn) menuBtn.addEventListener('click', openMenu);
-    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-
-    // ФУНКЦИИ ФОРМЫ ЗАЯВКИ
+   // 1. Открытие модалки
+function openOrderModal(productName) {
     const modal = document.getElementById('order-modal');
-
-    function openOrderModal(productName) {
-        if (modal) {
-            document.getElementById('product-name').innerText = productName.toUpperCase();
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            document.body.style.overflow = 'hidden';
-        }
+    const productText = document.getElementById('product-name');
+    
+    if (modal && productText) {
+        productText.innerText = productName.toUpperCase();
+        modal.classList.remove('hidden');
+        modal.classList.add('flex'); // Показываем через Flex для центровки
+        document.body.style.overflow = 'hidden'; // Запрещаем скролл сайта
+    } else {
+        console.error("Форма не найдена на этой странице!");
     }
+}
 
-    function closeOrderModal() {
-        if (modal) {
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-            document.body.style.overflow = 'auto';
-        }
-    }
-
-    // Закрытие по клику вне формы
+// 2. Закрытие модалки
+function closeOrderModal() {
+    const modal = document.getElementById('order-modal');
     if (modal) {
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeOrderModal();
-        });
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto'; // Возвращаем скролл
     }
+}
 
-    // Анимации появления
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('active');
-        });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+// 3. Закрытие при клике на темный фон
+window.onclick = function(event) {
+    const modal = document.getElementById('order-modal');
+    if (event.target == modal) {
+        closeOrderModal();
+    }
+}
 
+// Инициализация иконок Lucide (если используешь их)
+if (window.lucide) {
     lucide.createIcons();
-</script>
+}
 <div id="order-modal" class="hidden fixed inset-0 z-[300] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4">
     <div class="bg-[#0f0f0f] border border-orange-600/30 p-8 md:p-12 rounded-[40px] max-w-md w-full relative shadow-2xl">
         <button onclick="closeOrderModal()" class="absolute top-6 right-6 text-slate-500 hover:text-orange-600 transition">
@@ -215,6 +188,7 @@
 </div>
 </body>
 </html>
+
 
 
 
