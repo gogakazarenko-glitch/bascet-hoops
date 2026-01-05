@@ -186,3 +186,38 @@ details[open] summary span {
 }
 .status-open { background: #ff6b00; color: #fff; }
 .status-closed { background: #1a1a1a; color: #555; border: 1px solid #333; }
+
+/* 1. Анимация появления при скролле (Reveal) */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 2. Оживление самой карточки (эффект парения) */
+.camp-card {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.camp-card:hover {
+    transform: translateY(-15px); /* Карточка приподнимается */
+    border-color: rgba(255, 107, 0, 0.4); /* Граница начинает светиться */
+    box-shadow: 0 20px 40px rgba(255, 107, 0, 0.1); /* Мягкая оранжевая тень */
+}
+/* Анимация плавного появления при скролле */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
