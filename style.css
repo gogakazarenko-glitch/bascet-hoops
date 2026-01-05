@@ -221,3 +221,17 @@ details[open] summary span {
     opacity: 1;
     transform: translateY(0);
 }
+/* Выносим навигацию на самый верхний слой */
+nav {
+    z-index: 9999 !important;
+}
+
+#mobile-menu {
+    z-index: 10000 !important;
+}
+
+/* Фикс для того, чтобы карточки не «съедали» меню при наведении */
+.camp-card {
+    position: relative;
+    z-index: 1;
+}
