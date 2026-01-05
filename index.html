@@ -28,23 +28,25 @@
             <a href="profile.html" class="hover:text-orange-500 transition">Профиль</a>
         </div>
 
-        <button id="menu-btn" class="md:hidden text-white p-4 -mr-4 focus:outline-none active:scale-90 transition-transform">
+        <button id="menu-btn" class="md:hidden text-white p-4 -mr-4 focus:outline-none">
             <i data-lucide="menu" class="w-8 h-8 text-orange-600"></i>
         </button>
     </div>
 
-    <div id="mobile-menu" class="hidden fixed inset-0 top-0 bg-black/95 backdrop-blur-xl z-[200] p-8 flex-col justify-center items-center gap-8 text-center text-white font-black uppercase italic text-3xl transition-all duration-300">
-    <button id="close-menu" class="absolute top-6 right-6 text-orange-600">
-        <i data-lucide="x" class="w-10 h-10"></i>
-    </button>
-    
-    <a href="index.html" class="hover:text-orange-500 transition-colors">Главная</a>
-    <a href="tournaments.html" class="hover:text-orange-500 transition-colors">Турниры</a>
-    <a href="academy.html" class="hover:text-orange-500 transition-colors">Академия</a>
-    <a href="camps.html" class="hover:text-orange-500 transition-colors">Кэмпы</a>
-    <a href="stats.html" class="hover:text-orange-500 transition-colors">Статистика</a>
-    <a href="profile.html" class="hover:text-orange-500 transition-colors">Профиль</a>
-</div>
+    <div id="mobile-menu" class="hidden fixed inset-0 top-0 bg-black/98 backdrop-blur-2xl z-[200] p-8 flex-col justify-center items-center gap-8 text-center text-white font-black uppercase italic text-3xl">
+        <button id="close-menu" class="absolute top-6 right-6 text-orange-600 p-4">
+            <i data-lucide="x" class="w-10 h-10"></i>
+        </button>
+        <a href="index.html">Главная</a>
+        <a href="tournaments.html">Турниры</a>
+        <a href="academy.html">Академия</a>
+        <a href="camps.html">Кэмпы</a>
+        <a href="stats.html">Статистика</a>
+        <a href="profile.html">Профиль</a>
+    </div>
+</nav>
+
+       
 </nav>
 
     <main class="pt-[180px] pb-20 text-center">
@@ -77,26 +79,32 @@
     const closeBtn = document.getElementById('close-menu');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    function openMenu() {
-        mobileMenu.classList.remove('hidden');
-        mobileMenu.classList.add('flex');
-        document.body.style.overflow = 'hidden'; // Запрещаем скролл фона
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        });
     }
 
-    function closeMenu() {
-        mobileMenu.classList.add('hidden');
-        mobileMenu.classList.remove('flex');
-        document.body.style.overflow = 'auto'; // Возвращаем скролл
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        });
     }
 
-    if (menuBtn) menuBtn.addEventListener('click', openMenu);
-    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-
-    // Закрытие при клике на любую ссылку
+    // Закрытие при клике на ссылку
     const links = mobileMenu.querySelectorAll('a');
-    links.forEach(link => link.addEventListener('click', closeMenu));
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+    });
 
-    // Анимация появления блоков (Reveal)
+    // Анимация появления (Reveal)
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) entry.target.classList.add('active');
@@ -109,5 +117,6 @@
    
 </body>
 </html>
+
 
 
