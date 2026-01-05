@@ -33,14 +33,18 @@
         </button>
     </div>
 
-    <div id="mobile-menu" class="hidden fixed inset-0 top-[72px] bg-black/98 z-[200] p-8 flex-col gap-8 text-center text-white font-black uppercase italic text-2xl border-t border-orange-600/20 shadow-2xl">
-        <a href="index.html" class="hover:text-orange-500 py-2">Главная</a>
-        <a href="tournaments.html" class="hover:text-orange-500 py-2">Турниры</a>
-        <a href="academy.html" class="hover:text-orange-500 py-2">Академия</a>
-        <a href="camps.html" class="hover:text-orange-500 py-2">Кэмпы</a>
-        <a href="stats.html" class="hover:text-orange-500 py-2">Статистика</a>
-        <a href="profile.html" class="hover:text-orange-500 py-2">Профиль</a>
-    </div>
+    <div id="mobile-menu" class="hidden fixed inset-0 top-0 bg-black/95 backdrop-blur-xl z-[200] p-8 flex-col justify-center items-center gap-8 text-center text-white font-black uppercase italic text-3xl transition-all duration-300">
+    <button id="close-menu" class="absolute top-6 right-6 text-orange-600">
+        <i data-lucide="x" class="w-10 h-10"></i>
+    </button>
+    
+    <a href="index.html" class="hover:text-orange-500 transition-colors">Главная</a>
+    <a href="tournaments.html" class="hover:text-orange-500 transition-colors">Турниры</a>
+    <a href="academy.html" class="hover:text-orange-500 transition-colors">Академия</a>
+    <a href="camps.html" class="hover:text-orange-500 transition-colors">Кэмпы</a>
+    <a href="stats.html" class="hover:text-orange-500 transition-colors">Статистика</a>
+    <a href="profile.html" class="hover:text-orange-500 transition-colors">Профиль</a>
+</div>
 </nav>
 
     <main class="pt-[180px] pb-20 text-center">
@@ -69,46 +73,41 @@
         </section>
     </main>
 <script>
-    // Мгновенное открытие меню для мобилок
     const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-menu');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    function toggleMenu() {
-        mobileMenu.classList.toggle('hidden');
-        mobileMenu.classList.toggle('flex');
-        // Блокируем скролл основной страницы при открытом меню
-        document.body.style.overflow = mobileMenu.classList.contains('hidden') ? 'auto' : 'hidden';
+    function openMenu() {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
+        document.body.style.overflow = 'hidden'; // Запрещаем скролл фона
     }
 
-    // Слушаем и клик, и касание для скорости
-    menuBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        toggleMenu();
-    });
+    function closeMenu() {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+        document.body.style.overflow = 'auto'; // Возвращаем скролл
+    }
 
-    // Закрытие меню при клике на ссылку (чтобы не висело)
-    const menuLinks = mobileMenu.querySelectorAll('a');
-    menuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-            mobileMenu.classList.remove('flex');
-            document.body.style.overflow = 'auto';
-        });
-    });
+    if (menuBtn) menuBtn.addEventListener('click', openMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
 
-    // Анимации появления (Reveal)
+    // Закрытие при клике на любую ссылку
+    const links = mobileMenu.querySelectorAll('a');
+    links.forEach(link => link.addEventListener('click', closeMenu));
+
+    // Анимация появления блоков (Reveal)
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) entry.target.classList.add('active');
         });
     }, { threshold: 0.1 });
-    
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Иконки
     lucide.createIcons();
 </script>
    
 </body>
 </html>
+
 
