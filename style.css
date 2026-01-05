@@ -10,6 +10,26 @@ body {
     background-color: #050505; color: white; overflow-x: hidden;
 }
 
+/* ФИКС БЕГУЩЕЙ СТРОКИ */
+.marquee-container {
+    background: linear-gradient(90deg, var(--accent), var(--primary));
+    padding: 12px 0; position: fixed; top: 0; width: 100%; z-index: 100;
+    overflow: hidden;
+}
+
+.marquee-text {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 20s linear infinite;
+    font-weight: 900;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* СЕТКА И СВЕЧЕНИЕ */
 .bg-grid {
     background-image: radial-gradient(circle at 2px 2px, rgba(255, 107, 0, 0.08) 1px, transparent 0);
     background-size: 40px 40px;
@@ -21,22 +41,14 @@ body {
     border-radius: 50%; pointer-events: none; z-index: 0; filter: blur(60px);
 }
 
-.marquee-container {
-    background: linear-gradient(90deg, var(--accent), var(--primary));
-    padding: 12px 0; position: fixed; top: 0; width: 100%; z-index: 100;
-}
-
 .font-outline {
     -webkit-text-stroke: 1px var(--primary);
     color: transparent;
 }
 
-.reveal {
-    opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out;
-}
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
 
-.reveal.active {
-    opacity: 1; transform: translateY(0);
-}
-
-nav a { transition: all 0.3s; }
+/* Стили для ссылок меню */
+nav a { transition: color 0.3s; }
+nav a:hover { color: var(--primary); }
