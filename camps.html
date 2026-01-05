@@ -7,160 +7,164 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Гарантируем видимость блоков, если анимация не сработала */
-        .reveal { opacity: 1 !important; transform: none !important; }
-    </style>
 </head>
 <body class="bg-black text-white font-sans">
 
     <nav class="fixed top-0 left-0 w-full z-[1000] py-4 bg-black/60 backdrop-blur-xl border-b border-white/5">
-    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <a href="index.html" class="flex items-center gap-3 no-underline">
-            <div class="w-10 h-10 bg-orange-600 flex items-center justify-center font-black rounded-tr-xl rounded-bl-xl text-white shadow-lg shadow-orange-600/30">H</div>
-            <span class="text-2xl font-black italic uppercase tracking-tighter text-white">ХУПС<span class="text-orange-600">ПРО</span></span>
-        </a>
-
-        <div class="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-widest text-white">
-            <a href="index.html" class="hover:text-orange-500 transition">Главная</a>
-            <a href="tournaments.html" class="hover:text-orange-500 transition">Турниры</a>
-            <a href="academy.html" class="hover:text-orange-500 transition">Академия</a>
-            <a href="camps.html" class="text-orange-600">Кэмпы</a>
-            <a href="stats.html" class="hover:text-orange-500 transition">Статистика</a>
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 no-underline">
+                <div class="w-10 h-10 bg-orange-600 flex items-center justify-center font-black rounded-tr-xl rounded-bl-xl text-white shadow-lg shadow-orange-600/30">H</div>
+                <span class="text-2xl font-black italic uppercase tracking-tighter text-white">ХУПС<span class="text-orange-600">ПРО</span></span>
+            </a>
+            <div class="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-widest text-white">
+                <a href="index.html" class="hover:text-orange-500 transition">Главная</a>
+                <a href="tournaments.html" class="hover:text-orange-500 transition">Турниры</a>
+                <a href="academy.html" class="hover:text-orange-500 transition">Академия</a>
+                <a href="camps.html" class="text-orange-600">Кэмпы</a>
+                <a href="stats.html" class="hover:text-orange-500 transition">Статистика</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-orange-600 p-2 hover:bg-white/5 rounded-xl transition">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
         </div>
-
-        <button id="menu-btn" class="md:hidden text-orange-600 p-2 hover:bg-white/5 rounded-xl transition">
-            <i data-lucide="menu" class="w-8 h-8"></i>
-        </button>
-    </div>
-
-    <div id="mobile-menu" class="hidden fixed inset-0 bg-black z-[2000] flex-col justify-center items-center gap-8 text-4xl font-black uppercase italic p-6">
-        <button id="close-menu" class="absolute top-8 right-8 text-orange-600">
-            <i data-lucide="x" class="w-12 h-12"></i>
-        </button>
-        <a href="index.html" class="text-white">Главная</a>
-        <a href="tournaments.html" class="text-white">Турниры</a>
-        <a href="academy.html" class="text-white">Академия</a>
-        <a href="camps.html" class="text-orange-600">Кэмпы</a>
-        <a href="stats.html" class="text-white">Статистика</a>
-    </div>
-</nav>
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-black z-[2000] flex-col justify-center items-center gap-8 text-4xl font-black uppercase italic p-6">
+            <button id="close-menu" class="absolute top-8 right-8 text-orange-600"><i data-lucide="x" class="w-12 h-12"></i></button>
+            <a href="index.html">Главная</a>
+            <a href="tournaments.html">Турниры</a>
+            <a href="academy.html">Академия</a>
+            <a href="camps.html" class="text-orange-600">Кэмпы</a>
+            <a href="stats.html">Статистика</a>
+        </div>
+    </nav>
 
     <main class="pt-[140px] px-6 max-w-7xl mx-auto pb-20">
-        <h2 class="text-5xl md:text-8xl font-black uppercase italic mb-12">BASKETBALL <br> <span class="text-orange-600">CAMPS</span></h2>
+        <h2 class="text-5xl md:text-8xl font-black uppercase italic mb-12 reveal">BASKETBALL <br> <span class="text-orange-600">CAMPS</span></h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="space-y-32">
             
-           <div class="camp-card reveal bg-white/5 border border-white/10 rounded-[40px] overflow-hidden">
-                <div class="h-48 bg-slate-800">
-                    <img src="https://images.unsplash.com/photo-1519861531473-920036234714?q=80" class="w-full h-full object-cover">
+            <section class="reveal">
+                <div class="grid md:grid-cols-2 gap-8 items-center mb-12">
+                    <div class="rounded-[40px] overflow-hidden h-[300px] md:h-[400px]">
+                        <img src="https://images.unsplash.com/photo-1519861531473-920036234714?q=80" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+                    </div>
+                    <div>
+                        <span class="text-orange-600 font-black uppercase tracking-widest text-sm">Красная Поляна</span>
+                        <h3 class="text-5xl font-black uppercase italic my-4">MOUNTAIN CAMP</h3>
+                        <p class="text-slate-400 font-bold uppercase text-xs leading-relaxed">Тренировки на высоте 540 метров. Чистый горный воздух, профессиональный паркет и лучшие виды на Кавказский хребет.</p>
+                    </div>
                 </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-black uppercase italic mb-4">MOUNTAIN <span class="text-orange-600 text-sm block">Красная Поляна</span></h3>
-                    <button onclick="openOrderModal('Кэмп Горы')" class="w-full bg-orange-600 py-3 rounded-xl font-black uppercase italic">Бронь</button>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white/5 border border-white/10 p-8 rounded-[30px] flex flex-col">
+                        <h4 class="text-xl font-black uppercase italic mb-4">Спартанский</h4>
+                        <ul class="text-[10px] uppercase font-bold text-slate-500 space-y-3 mb-8 flex-grow">
+                            <li>• Хостел у подъемника</li>
+                            <li>• 2 тренировки в день</li>
+                            <li>• Только завтраки</li>
+                        </ul>
+                        <div class="text-2xl font-black mb-6">25 000₽</div>
+                        <button onclick="openOrderModal('Mountain: Спартанский')" class="w-full py-4 border border-orange-600/30 rounded-xl font-black uppercase text-[10px] hover:bg-orange-600 transition">Выбрать</button>
+                    </div>
+                    <div class="bg-orange-600/10 border-2 border-orange-600 p-8 rounded-[30px] flex flex-col relative">
+                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-600 px-4 py-1 rounded-full text-[8px] font-black uppercase">Популярный</div>
+                        <h4 class="text-xl font-black uppercase italic mb-4">Полный Фарш</h4>
+                        <ul class="text-[10px] uppercase font-bold text-slate-300 space-y-3 mb-8 flex-grow">
+                            <li>• Отель 4* (Marriott)</li>
+                            <li>• 3 тренировки + бассейн</li>
+                            <li>• 3-разовое питание</li>
+                            <li>• Полный комплект формы</li>
+                        </ul>
+                        <div class="text-2xl font-black mb-6">45 000₽</div>
+                        <button onclick="openOrderModal('Mountain: Полный Фарш')" class="w-full py-4 bg-orange-600 rounded-xl font-black uppercase text-[10px] hover:bg-orange-500 transition shadow-lg shadow-orange-600/20">Выбрать</button>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 p-8 rounded-[30px] flex flex-col">
+                        <h4 class="text-xl font-black uppercase italic mb-4">Эконом</h4>
+                        <ul class="text-[10px] uppercase font-bold text-slate-500 space-y-3 mb-8 flex-grow">
+                            <li>• Без проживания</li>
+                            <li>• Все тренировки</li>
+                            <li>• Фирменная футболка</li>
+                        </ul>
+                        <div class="text-2xl font-black mb-6">15 000₽</div>
+                        <button onclick="openOrderModal('Mountain: Эконом')" class="w-full py-4 border border-white/20 rounded-xl font-black uppercase text-[10px] hover:bg-white/10 transition">Выбрать</button>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-           <div class="camp-card reveal bg-white/5 border border-white/10 rounded-[40px] overflow-hidden">
-                <div class="h-48 bg-slate-800">
-                    <img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?q=80" class="w-full h-full object-cover">
+            <section class="reveal">
+                <div class="grid md:grid-cols-2 gap-8 items-center mb-12">
+                    <div class="rounded-[40px] overflow-hidden h-[300px] md:h-[400px] md:order-2">
+                        <img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?q=80" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+                    </div>
+                    <div class="md:order-1">
+                        <span class="text-orange-600 font-black uppercase tracking-widest text-sm">Сириус</span>
+                        <h3 class="text-5xl font-black uppercase italic my-4">COAST CAMP</h3>
+                        <p class="text-slate-400 font-bold uppercase text-xs leading-relaxed">Тренировки на берегу Черного моря. Современные залы олимпийского парка и вечерние игры под открытым небом.</p>
+                    </div>
                 </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-black uppercase italic mb-4">COAST <span class="text-orange-600 text-sm block">Сочи Сириус</span></h3>
-                    <button onclick="openOrderModal('Кэмп Море')" class="w-full bg-orange-600 py-3 rounded-xl font-black uppercase italic">Бронь</button>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white/5 border border-white/10 p-8 rounded-[30px] flex flex-col">
+                        <h4 class="text-xl font-black uppercase italic mb-4 text-center">Спартанский</h4>
+                        <div class="text-2xl font-black mb-6 text-center">28 000₽</div>
+                        <button onclick="openOrderModal('Coast: Спартанский')" class="w-full py-4 border border-orange-600/30 rounded-xl font-black uppercase text-[10px] hover:bg-orange-600 transition">Выбрать</button>
+                    </div>
+                    <div class="bg-orange-600/10 border-2 border-orange-600 p-8 rounded-[30px] flex flex-col">
+                        <h4 class="text-xl font-black uppercase italic mb-4 text-center">Полный Фарш</h4>
+                        <div class="text-2xl font-black mb-6 text-center">48 000₽</div>
+                        <button onclick="openOrderModal('Coast: Полный Фарш')" class="w-full py-4 bg-orange-600 rounded-xl font-black uppercase text-[10px] hover:bg-orange-500 transition shadow-lg shadow-orange-600/20">Выбрать</button>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 p-8 rounded-[30px] flex flex-col">
+                        <h4 class="text-xl font-black uppercase italic mb-4 text-center">Эконом</h4>
+                        <div class="text-2xl font-black mb-6 text-center">18 000₽</div>
+                        <button onclick="openOrderModal('Coast: Эконом')" class="w-full py-4 border border-white/20 rounded-xl font-black uppercase text-[10px] hover:bg-white/10 transition">Выбрать</button>
+                    </div>
                 </div>
-            </div>
-
-            <div class="camp-card reveal bg-white/5 border border-white/10 rounded-[40px] overflow-hidden">
-                <div class="h-48 bg-slate-800">
-                    <img src="https://images.unsplash.com/photo-1544919982-b61976f0ba43?q=80" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-black uppercase italic mb-4">PRO <span class="text-orange-600 text-sm block">Москва PRO</span></h3>
-                    <button onclick="openOrderModal('Кэмп PRO')" class="w-full bg-orange-600 py-3 rounded-xl font-black uppercase italic">Бронь</button>
-                </div>
-            </div>
+            </section>
 
         </div>
     </main>
 
-    <div id="order-modal" class="hidden fixed inset-0 z-[300] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4">
-        <div class="bg-[#111] border border-orange-600/30 p-8 rounded-[30px] max-w-md w-full relative">
-            <button onclick="closeOrderModal()" class="absolute top-4 right-4 text-slate-500"><i data-lucide="x"></i></button>
-            <h3 class="text-xl font-black uppercase italic text-center text-white">ЗАЯВКА: <br><span id="product-name" class="text-orange-600">КЭМП</span></h3>
-            <form class="space-y-4 mt-6" onsubmit="event.preventDefault(); alert('Принято!'); closeOrderModal();">
-                <input type="text" placeholder="ИМЯ" required class="w-full bg-white/5 border border-white/10 p-3 rounded-xl text-white outline-none focus:border-orange-600">
-                <input type="text" placeholder="ТЕЛЕГРАМ / ТЕЛЕФОН" required class="w-full bg-white/5 border border-white/10 p-3 rounded-xl text-white outline-none focus:border-orange-600">
-                <button type="submit" class="w-full bg-orange-600 py-4 rounded-xl font-black uppercase italic text-white">ОТПРАВИТЬ</button>
+    <div id="order-modal" class="hidden fixed inset-0 z-[3000] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4">
+        <div class="bg-[#111] border border-orange-600/30 p-8 rounded-[40px] max-w-md w-full relative">
+            <button onclick="closeOrderModal()" class="absolute top-6 right-6 text-slate-500 hover:text-white"><i data-lucide="x"></i></button>
+            <h3 class="text-2xl font-black uppercase italic text-center text-white mb-2">ЗАБРОНИРОВАТЬ</h3>
+            <p id="product-name" class="text-center text-orange-600 font-black uppercase text-[10px] tracking-widest mb-8">ВЫБРАННЫЙ ТАРИФ</p>
+            <form class="space-y-4" onsubmit="event.preventDefault(); alert('Менеджер свяжется с вами для уточнения деталей!'); closeOrderModal();">
+                <input type="text" placeholder="ВАШЕ ИМЯ" required class="w-full bg-white/5 border border-white/10 p-4 rounded-2xl text-white outline-none focus:border-orange-600 text-center font-bold">
+                <input type="text" placeholder="ТЕЛЕГРАМ / ТЕЛЕФОН" required class="w-full bg-white/5 border border-white/10 p-4 rounded-2xl text-white outline-none focus:border-orange-600 text-center font-bold">
+                <button type="submit" class="w-full bg-orange-600 py-5 rounded-2xl font-black uppercase italic text-white shadow-lg shadow-orange-600/20 hover:bg-orange-500 transition">ОТПРАВИТЬ ЗАЯВКУ</button>
             </form>
         </div>
     </div>
 
     <script>
-    // --- КОД ДЛЯ МЕНЮ (БУРГЕРА) ---
-    const menuBtn = document.getElementById('menu-btn');
-    const closeBtn = document.getElementById('close-menu');
-    const mobileMenu = document.getElementById('mobile-menu');
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-    if (menuBtn && mobileMenu) {
-        menuBtn.onclick = () => {
-            mobileMenu.classList.remove('hidden');
-            mobileMenu.classList.add('flex');
-            document.body.style.overflow = 'hidden'; // Запрещаем скролл при открытом меню
-        };
-    }
+        if (menuBtn) menuBtn.onclick = () => { mobileMenu.classList.remove('hidden'); mobileMenu.classList.add('flex'); document.body.style.overflow = 'hidden'; };
+        if (closeBtn) closeBtn.onclick = () => { mobileMenu.classList.add('hidden'); mobileMenu.classList.remove('flex'); document.body.style.overflow = 'auto'; };
 
-    if (closeBtn && mobileMenu) {
-        closeBtn.onclick = () => {
-            mobileMenu.classList.add('hidden');
-            mobileMenu.classList.remove('flex');
-            document.body.style.overflow = 'auto'; // Возвращаем скролл
-        };
-    }
-
-    // --- КОД ДЛЯ ФОРМЫ ЗАКАЗА ---
-    function openOrderModal(name) {
-        const m = document.getElementById('order-modal');
-        const p = document.getElementById('product-name');
-        if(m && p) {
+        function openOrderModal(name) {
+            const m = document.getElementById('order-modal');
+            const p = document.getElementById('product-name');
             p.innerText = name.toUpperCase();
             m.classList.remove('hidden');
             m.classList.add('flex');
             document.body.style.overflow = 'hidden';
         }
-    }
 
-    function closeOrderModal() {
-        const m = document.getElementById('order-modal');
-        if(m) {
+        function closeOrderModal() {
+            const m = document.getElementById('order-modal');
             m.classList.add('hidden');
             m.classList.remove('flex');
             document.body.style.overflow = 'auto';
         }
-    }
 
-    // --- КОД ДЛЯ АНИМАЦИИ ПОЯВЛЕНИЯ (REVEAL) ---
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
-        });
-    }, { threshold: 0.1 });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // Закрытие формы по клику на фон
-    window.addEventListener('click', (e) => {
-        const m = document.getElementById('order-modal');
-        if (e.target === m) closeOrderModal();
-    });
-
-    // Инициализация иконок
-    lucide.createIcons();
-</script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
-
-
-
