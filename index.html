@@ -8,69 +8,103 @@
     <link rel="stylesheet" href="style.css">
     <title>ХУПС ПРО | ГЛАВНАЯ</title>
 </head>
-<body class="bg-[#020617] bg-grid">
+<body class="bg-[#050505] bg-grid">
     <div id="cursor-glow"></div>
-    <div class="marquee-container">
+    
+    <div class="marquee-container shadow-lg shadow-orange-600/20">
         <div class="marquee-text">
-            <span class="mx-10 font-black italic uppercase text-[10px]">🏀 LIVE: РЕГИСТРАЦИЯ НА ТУРНИР ОТКРЫТА • ⚡ ЗАПИСЬ В КЭМП 2026 • 🏆 ОБНОВЛЕН РЕЙТИНГ ИГРОКОВ • 🏀 LIVE: РЕГИСТРАЦИЯ НА ТУРНИР ОТКРЫТА •</span>
+            <span class="mx-10 font-black italic uppercase text-[10px] text-white">🏀 LIVE: РЕГИСТРАЦИЯ НА ТУРНИР ОТКРЫТА • ⚡ ЗАПИСЬ В КЭМП 2026 • 🏆 ОБНОВЛЕН РЕЙТИНГ ИГРОКОВ • 🏀</span>
         </div>
     </div>
-    <nav>
+
+    <nav class="fixed top-10 left-0 w-full z-50 py-6">
         <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center text-white">
             <a href="index.html" class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-blue-600 flex items-center justify-center font-black rounded-tr-xl rounded-bl-xl">H</div>
-                <span class="text-2xl font-black italic uppercase tracking-tighter">ХУПС<span class="text-blue-600">ПРО</span></span>
+                <div class="w-10 h-10 bg-orange-600 flex items-center justify-center font-black rounded-tr-xl rounded-bl-xl shadow-lg shadow-orange-600/40">H</div>
+                <span class="text-2xl font-black italic uppercase tracking-tighter">ХУПС<span class="text-orange-600">ПРО</span></span>
             </a>
+            
             <div class="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-widest">
-                <a href="index.html" class="text-blue-500">Главная</a>
-                <a href="tournaments.html">Турниры</a>
-                <a href="academy.html">Академия</a>
-                <a href="camps.html">Кэмпы</a>
-                <a href="stats.html">Статистика</a>
-                <a href="profile.html">Профиль</a>
+                <a href="index.html" class="text-orange-500 hover:text-orange-400 transition">Главная</a>
+                <a href="tournaments.html" class="hover:text-orange-500 transition">Турниры</a>
+                <a href="academy.html" class="hover:text-orange-500 transition">Академия</a>
+                <a href="camps.html" class="hover:text-orange-500 transition">Кэмпы</a>
+                <a href="stats.html" class="hover:text-orange-500 transition">Статистика</a>
+                <a href="profile.html" class="hover:text-orange-500 transition">Профиль</a>
             </div>
-            <button onclick="toggleMenu()" class="md:hidden"><i data-lucide="menu"></i></button>
+
+            <button onclick="toggleMenu()" class="md:hidden text-white p-2 bg-orange-600 rounded-lg"><i data-lucide="menu"></i></button>
+        </div>
+
+        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-black/95 p-8 flex flex-col gap-6 text-center text-white font-black uppercase italic border-b border-orange-600/30">
+            <a href="index.html" class="text-orange-500">Главная</a>
+            <a href="tournaments.html">Турниры</a>
+            <a href="academy.html">Академия</a>
+            <a href="camps.html">Кэмпы</a>
+            <a href="stats.html">Статистика</a>
+            <a href="profile.html">Профиль</a>
         </div>
     </nav>
-    <main class="pt-[180px]">
+
+    <main class="pt-[180px] pb-20">
         <section class="text-center px-6">
-            <h1 class="text-[14vw] md:text-[10vw] font-black italic uppercase leading-[0.85] reveal">
-                ВЫШЕ <br> <span class="text-blue-600 font-outline">ПРЕДЕЛА</span>
+            <h1 class="text-[14vw] md:text-[10vw] font-black italic uppercase leading-[0.85] text-white reveal">
+                ВЫШЕ <br> <span class="text-orange-600 font-outline">ПРЕДЕЛА</span>
             </h1>
-            <p class="mt-6 text-slate-500 font-bold uppercase text-[10px] tracking-[0.4em] reveal">Будущее баскетбола начинается здесь</p>
+            <p class="mt-6 text-slate-500 font-bold uppercase text-[10px] tracking-[0.4em] reveal">Твой путь к профессиональному баскетболу</p>
         </section>
-      <section class="mt-24 py-10 overflow-hidden border-y border-white/5 bg-white/5">
-    <div class="cards-flow flex gap-6 px-6">
-        <div class="min-w-[320px] md:min-w-[450px] h-[500px] rounded-[40px] overflow-hidden relative group player-card">
-            <img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?q=80" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-orange-600/90 to-transparent"></div>
-            <div class="relative z-10 p-10 h-full flex flex-col justify-end">
-                <span class="text-white font-black italic text-xs tracking-widest">КЭМПЫ 2026</span>
-                <h3 class="text-4xl font-black uppercase italic mt-2 text-white">ИНТЕНСИВ <br> ДЛЯ ПРОФИ</h3>
-            </div>
-        </div>
 
-        <div class="min-w-[320px] md:min-w-[450px] h-[500px] rounded-[40px] overflow-hidden relative group player-card">
-            <img src="https://images.unsplash.com/photo-1519861531473-9200362146b3?q=80" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-red-600/90 to-transparent"></div>
-            <div class="relative z-10 p-10 h-full flex flex-col justify-end">
-                <span class="text-white font-black italic text-xs tracking-widest">ТУРНИРЫ LIVE</span>
-                <h3 class="text-4xl font-black uppercase italic mt-2 text-white">УЛИЧНАЯ <br> ЯРОСТЬ 3х3</h3>
+        <section class="mt-24 px-6 max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            <div class="h-[400px] bg-slate-900 rounded-[40px] border border-white/5 relative overflow-hidden group hover:border-orange-600 transition duration-500 reveal">
+                <img src="https://images.unsplash.com/photo-1544919982-b61976f0ba43?q=80" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-110 transition duration-700">
+                <div class="relative z-10 p-10 h-full flex flex-col justify-end">
+                    <h3 class="text-2xl font-black uppercase italic text-white">Турниры <br> 3х3</h3>
+                    <a href="tournaments.html" class="mt-4 text-orange-500 font-black uppercase text-[10px] tracking-widest">Узнать больше →</a>
+                </div>
             </div>
-        </div>
-
-        <div class="min-w-[320px] md:min-w-[450px] h-[500px] rounded-[40px] overflow-hidden relative group player-card">
-            <img src="https://images.unsplash.com/photo-1544919982-b61976f0ba43?q=80" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-orange-500/90 to-transparent"></div>
-            <div class="relative z-10 p-10 h-full flex flex-col justify-end">
-                <span class="text-white font-black italic text-xs tracking-widest">АКАДЕМИЯ</span>
-                <h3 class="text-4xl font-black uppercase italic mt-2 text-white">ШКОЛА <br> СНАЙПЕРОВ</h3>
+            <div class="h-[400px] bg-orange-600 rounded-[40px] relative overflow-hidden group shadow-2xl shadow-orange-600/20 reveal">
+                 <img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?q=80" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-110 transition duration-700">
+                 <div class="relative z-10 p-10 h-full flex flex-col justify-end">
+                    <h3 class="text-2xl font-black uppercase italic text-white">Академия <br> Скиллов</h3>
+                    <a href="academy.html" class="mt-4 text-white font-black uppercase text-[10px] tracking-widest">Вступить →</a>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
+            <div class="h-[400px] bg-slate-900 rounded-[40px] border border-white/5 relative overflow-hidden group hover:border-orange-600 transition duration-500 reveal">
+                <img src="https://images.unsplash.com/photo-1518063319789-7217e6706b04?q=80" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-110 transition duration-700">
+                <div class="relative z-10 p-10 h-full flex flex-col justify-end">
+                    <h3 class="text-2xl font-black uppercase italic text-white">Элитные <br> Кэмпы</h3>
+                    <a href="camps.html" class="mt-4 text-orange-500 font-black uppercase text-[10px] tracking-widest">Записаться →</a>
+                </div>
+            </div>
+        </section>
     </main>
-    <script src="script.js"></script><script>lucide.createIcons();</script>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        }
+
+        // Анимация появления
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Движение свечения за курсором
+        document.addEventListener('mousemove', (e) => {
+            const glow = document.getElementById('cursor-glow');
+            glow.style.left = e.clientX - 250 + 'px';
+            glow.style.top = e.clientY - 250 + 'px';
+        });
+    </script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>
-
