@@ -1,196 +1,123 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="style.css"><title>ТУРНИРЫ | ХУПС ПРО</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Турниры - ХУПСПРО</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-[#050505] bg-grid">
-    <div id="cursor-glow"></div>
-    <div class="marquee-container"><div class="marquee-text"><span class="mx-10 uppercase text-[10px] text-white">🏆 ФИНАЛ СЕЗОНА: 15 МАРТА • ПРИЗОВОЙ ФОНД 1.000.000₽ • РЕГИСТРАЦИЯ ОТКРЫТА • 🏆 ФИНАЛ СЕЗОНА: 15 МАРТА • ПРИЗОВОЙ ФОНД 1.000.000₽ •</span></div></div>
+<body class="bg-black text-white font-sans overflow-x-hidden">
 
     <nav class="fixed top-0 left-0 w-full z-[100] py-4 bg-black/50 backdrop-blur-md border-b border-orange-600/10">
-    <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center text-white">
-        <a href="index.html" class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-orange-600 flex items-center justify-center font-black rounded-tr-xl rounded-bl-xl shadow-lg shadow-orange-600/40">H</div>
-            <span class="text-2xl font-black italic uppercase tracking-tighter">ХУПС<span class="text-orange-600">ПРО</span></span>
-        </a>
-        
-        <div class="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-widest">
-            <a href="index.html" class="hover:text-orange-500 transition">Главная</a>
-            <a href="tournaments.html" class="hover:text-orange-500 transition">Турниры</a>
-            <a href="academy.html" class="hover:text-orange-500 transition">Академия</a>
-            <a href="camps.html" class="hover:text-orange-500 transition">Кэмпы</a>
-            <a href="stats.html" class="hover:text-orange-500 transition">Статистика</a>
-            <a href="profile.html" class="hover:text-orange-500 transition">Профиль</a>
+        <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-orange-600 flex items-center justify-center font-black rounded-tr-xl rounded-bl-xl shadow-lg shadow-orange-600/40 text-white">H</div>
+                <span class="text-2xl font-black italic uppercase tracking-tighter text-white">ХУПС<span class="text-orange-600">ПРО</span></span>
+            </a>
+            
+            <div class="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-widest text-white">
+                <a href="index.html" class="hover:text-orange-500 transition">Главная</a>
+                <a href="tournaments.html" class="text-orange-600">Турниры</a>
+                <a href="academy.html" class="hover:text-orange-500 transition">Академия</a>
+                <a href="camps.html" class="hover:text-orange-500 transition">Кэмпы</a>
+                <a href="stats.html" class="hover:text-orange-500 transition">Статистика</a>
+                <a href="profile.html" class="hover:text-orange-500 transition">Профиль</a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-white p-2">
+                <i data-lucide="menu" class="w-8 h-8 text-orange-600"></i>
+            </button>
         </div>
 
-        <button id="menu-btn" class="md:hidden text-white p-4 -mr-4 focus:outline-none">
-            <i data-lucide="menu" class="w-8 h-8 text-orange-600"></i>
-        </button>
-    </div>
-
-    <div id="mobile-menu" class="hidden fixed inset-0 top-[72px] bg-black/98 z-[200] p-8 flex-col gap-8 text-center text-white font-black uppercase italic text-2xl">
-        <a href="index.html" class="py-2">Главная</a>
-        <a href="tournaments.html" class="py-2">Турниры</a>
-        <a href="academy.html" class="py-2">Академия</a>
-        <a href="camps.html" class="py-2">Кэмпы</a>
-        <a href="stats.html" class="py-2">Статистика</a>
-        <a href="profile.html" class="py-2">Профиль</a>
-    </div>
-</nav>
-   
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-black z-[200] flex-col justify-center items-center gap-8 text-3xl font-black uppercase italic">
+            <button id="close-menu" class="absolute top-6 right-6 text-orange-600"><i data-lucide="x" class="w-10 h-10"></i></button>
+            <a href="index.html">Главная</a>
+            <a href="tournaments.html" class="text-orange-600">Турниры</a>
+            <a href="academy.html">Академия</a>
+            <a href="camps.html">Кэмпы</a>
+            <a href="stats.html">Статистика</a>
+            <a href="profile.html">Профиль</a>
+        </div>
+    </nav>
 
     <main class="pt-[140px] px-6 max-w-7xl mx-auto pb-20">
-    <h2 class="text-6xl md:text-8xl font-black uppercase italic reveal mb-12">ACTIVE <br> <span class="text-orange-600">EVENTS</span></h2>
+        <h2 class="text-6xl md:text-8xl font-black uppercase italic mb-12 reveal">ACTIVE <br> <span class="text-orange-600">EVENTS</span></h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-        
-        <div class="sale-card p-2 rounded-[40px] reveal overflow-hidden">
-            <div class="relative h-60 rounded-[35px] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1519861531473-920036234714?q=80" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
-                <div class="absolute top-6 left-6 flex gap-2">
-                    <span class="status-badge status-open">Регистрация</span>
-                    <span class="status-badge bg-black/50 backdrop-blur-md text-white">5x5</span>
-                </div>
-            </div>
-            <div class="p-8">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-3xl font-black uppercase italic">ELITE <span class="text-orange-600">LEAGUE</span></h3>
-                    <div class="text-right">
-                        <p class="text-[10px] text-slate-500 uppercase">Призовой фонд</p>
-                        <p class="text-xl font-black text-orange-600 italic">150 000 ₽</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+            
+            <div class="sale-card p-2 rounded-[40px] bg-white/5 border border-white/10 overflow-hidden reveal">
+                <div class="relative h-60 rounded-[35px] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1519861531473-920036234714?q=80" class="w-full h-full object-cover grayscale">
+                    <div class="absolute top-6 left-6 flex gap-2">
+                        <span class="status-badge status-open bg-orange-600 px-3 py-1 rounded-full text-[10px] font-bold uppercase">Регистрация</span>
                     </div>
                 </div>
-                <p class="text-slate-400 text-[10px] uppercase mb-8">Главный зимний чемпионат. 16 команд, профессиональные судьи и статистика в реальном времени.</p>
-                <button onclick="openOrderModal('Elite League')" class="w-full bg-white text-black py-4 rounded-2xl font-black uppercase italic hover:bg-orange-600 hover:text-white transition">Заявить команду</button>
+                <div class="p-8">
+                    <h3 class="text-3xl font-black uppercase italic mb-4">ELITE <span class="text-orange-600">LEAGUE</span></h3>
+                    <p class="text-slate-400 text-[10px] uppercase mb-8">Главный зимний чемпионат 5х5. Профессиональное судейство.</p>
+                    <button onclick="openOrderModal('Elite League')" class="w-full bg-white text-black py-4 rounded-2xl font-black uppercase italic hover:bg-orange-600 hover:text-white transition">Заявить команду</button>
+                </div>
             </div>
-        </div>
 
-        <div class="sale-card p-2 rounded-[40px] reveal overflow-hidden">
-            <div class="relative h-60 rounded-[35px] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?q=80" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
-                <div class="absolute top-6 left-6 flex gap-2">
-                    <span class="status-badge status-open">Осталось 4 места</span>
-                    <span class="status-badge bg-black/50 backdrop-blur-md text-white">3x3</span>
-                </div>
-            </div>
-            <div class="p-8">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-3xl font-black uppercase italic">STREET <span class="text-orange-600">KINGS</span></h3>
-                    <div class="text-right">
-                        <p class="text-[10px] text-slate-500 uppercase">Взнос</p>
-                        <p class="text-xl font-black text-orange-600 italic">5 000 ₽</p>
+            <div class="sale-card p-2 rounded-[40px] bg-white/5 border border-white/10 overflow-hidden reveal text-white">
+                <div class="relative h-60 rounded-[35px] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?q=80" class="w-full h-full object-cover grayscale">
+                    <div class="absolute top-6 left-6 flex gap-2">
+                        <span class="status-badge status-open bg-orange-600 px-3 py-1 rounded-full text-[10px] font-bold uppercase">3х3</span>
                     </div>
                 </div>
-                <p class="text-slate-400 text-[10px] uppercase mb-8">Ночной турнир под открытым небом. Диджей, стритбольный вайб и жесткая борьба за звание королей площадки.</p>
-                <button onclick="openOrderModal('Street Kings')" class="w-full bg-white text-black py-4 rounded-2xl font-black uppercase italic hover:bg-orange-600 hover:text-white transition">Участвовать</button>
-            </div>
-        </div>
-
-        <div class="sale-card p-2 rounded-[40px] reveal overflow-hidden border-2 border-orange-600/20">
-            <div class="p-8">
-                <span class="status-badge status-closed mb-4 inline-block italic text-slate-500">Завершено</span>
-                <h3 class="text-3xl font-black uppercase italic mb-2">KING OF <br> <span class="text-orange-600">THE COURT</span></h3>
-                <p class="text-slate-400 text-[10px] uppercase mb-6 italic">Индивидуальный баттл 1 на 1. Проверь свой скилл в изоляции.</p>
-                <div class="flex items-center gap-4 text-white">
-                    <div class="bg-white/5 p-4 rounded-2xl flex-1 text-center">
-                        <p class="text-[8px] text-slate-500 uppercase">Победитель</p>
-                        <p class="font-black italic">Алексей П.</p>
-                    </div>
-                    <div class="bg-white/5 p-4 rounded-2xl flex-1 text-center">
-                        <p class="text-[8px] text-slate-500 uppercase">MVP</p>
-                        <p class="font-black italic">Иван С.</p>
-                    </div>
+                <div class="p-8">
+                    <h3 class="text-3xl font-black uppercase italic mb-4">STREET <span class="text-orange-600">KINGS</span></h3>
+                    <p class="text-slate-400 text-[10px] uppercase mb-8">Ночной турнир под открытым небом. Диджей и стритбольный вайб.</p>
+                    <button onclick="openOrderModal('Street Kings')" class="w-full bg-white text-black py-4 rounded-2xl font-black uppercase italic hover:bg-orange-600 hover:text-white transition">Участвовать</button>
                 </div>
             </div>
         </div>
+    </main>
 
-        <div class="sale-card p-2 rounded-[40px] reveal overflow-hidden">
-            <div class="p-8">
-                <span class="status-badge status-open mb-4 inline-block">Скоро</span>
-                <h3 class="text-3xl font-black uppercase italic mb-2 text-white">ACADEMY <br> <span class="text-orange-600">CUP</span></h3>
-                <p class="text-slate-400 text-[10px] uppercase mb-6">Внутришкольный турнир для учеников Академии. Старт через 2 недели.</p>
-                <div class="border-t border-white/10 pt-6">
-                    <p class="text-[9px] text-slate-500 uppercase mb-4">Следите за анонсами в соцсетях</p>
-                    <div class="flex gap-4">
-                        <button class="flex-1 border border-white/20 py-3 rounded-xl font-black uppercase italic text-[10px] hover:bg-white hover:text-black transition">Подробнее</button>
-                    </div>
-                </div>
-            </div>
+    <div id="order-modal" class="hidden fixed inset-0 z-[300] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4">
+        <div class="bg-[#0f0f0f] border border-orange-600/30 p-8 rounded-[40px] max-w-md w-full relative">
+            <button onclick="closeOrderModal()" class="absolute top-6 right-6 text-slate-500"><i data-lucide="x"></i></button>
+            <h3 class="text-2xl font-black uppercase italic text-center mb-2">ЗАЯВКА НА <br><span id="product-name" class="text-orange-600">ТУРНИР</span></h3>
+            <form class="space-y-4 mt-8" onsubmit="event.preventDefault(); alert('Заявка отправлена!'); closeOrderModal();">
+                <input type="text" placeholder="ВАШЕ ИМЯ" required class="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white outline-none focus:border-orange-600">
+                <input type="text" placeholder="TELEGRAM / ТЕЛЕФОН" required class="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white outline-none focus:border-orange-600">
+                <button type="submit" class="w-full bg-orange-600 py-4 rounded-xl font-black uppercase italic">ОТПРАВИТЬ</button>
+            </form>
         </div>
-
     </div>
-</main>
-   // 1. Открытие модалки
-function openOrderModal(productName) {
-    const modal = document.getElementById('order-modal');
-    const productText = document.getElementById('product-name');
-    
-    if (modal && productText) {
-        productText.innerText = productName.toUpperCase();
-        modal.classList.remove('hidden');
-        modal.classList.add('flex'); // Показываем через Flex для центровки
-        document.body.style.overflow = 'hidden'; // Запрещаем скролл сайта
-    } else {
-        console.error("Форма не найдена на этой странице!");
-    }
-}
 
-// 2. Закрытие модалки
-function closeOrderModal() {
-    const modal = document.getElementById('order-modal');
-    if (modal) {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-        document.body.style.overflow = 'auto'; // Возвращаем скролл
-    }
-}
+    <script>
+        // Бургер меню
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-// 3. Закрытие при клике на темный фон
-window.onclick = function(event) {
-    const modal = document.getElementById('order-modal');
-    if (event.target == modal) {
-        closeOrderModal();
-    }
-}
+        menuBtn.onclick = () => { mobileMenu.classList.remove('hidden'); mobileMenu.classList.add('flex'); document.body.style.overflow = 'hidden'; }
+        closeBtn.onclick = () => { mobileMenu.classList.add('hidden'); mobileMenu.classList.remove('flex'); document.body.style.overflow = 'auto'; }
 
-// Инициализация иконок Lucide (если используешь их)
-if (window.lucide) {
-    lucide.createIcons();
-}
-<div id="order-modal" class="hidden fixed inset-0 z-[300] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4">
-    <div class="bg-[#0f0f0f] border border-orange-600/30 p-8 md:p-12 rounded-[40px] max-w-md w-full relative shadow-2xl">
-        <button onclick="closeOrderModal()" class="absolute top-6 right-6 text-slate-500 hover:text-orange-600 transition">
-            <i data-lucide="x" class="w-8 h-8"></i>
-        </button>
-        
-        <div class="text-center mb-8">
-            <h3 class="text-3xl font-black uppercase italic">ОСТАВИТЬ <span class="text-orange-600">ЗАЯВКУ</span></h3>
-            <p id="product-name" class="text-orange-500 text-[10px] font-black uppercase tracking-[0.2em] mt-2">ВЫБРАННЫЙ КУРС</p>
-        </div>
-        
-        <form class="space-y-4" onsubmit="event.preventDefault(); alert('Заявка принята! Мы свяжемся с вами в Telegram.'); closeOrderModal();">
-            <div class="space-y-1">
-                <label class="text-[9px] text-slate-500 font-black uppercase ml-4">Как тебя зовут?</label>
-                <input type="text" required placeholder="ИВАН ИВАНОВ" class="w-full bg-white/5 border border-white/10 p-4 rounded-2xl text-white font-bold outline-none focus:border-orange-600 transition">
-            </div>
-            <div class="space-y-1">
-                <label class="text-[9px] text-slate-500 font-black uppercase ml-4">Твой Telegram или Телефон</label>
-                <input type="text" required placeholder="@USERNAME / +7..." class="w-full bg-white/5 border border-white/10 p-4 rounded-2xl text-white font-bold outline-none focus:border-orange-600 transition">
-            </div>
-            <button type="submit" class="w-full bg-orange-600 py-5 rounded-2xl font-black uppercase italic tracking-widest text-white shadow-lg shadow-orange-600/20 hover:bg-orange-500 transition-all mt-6">
-                ОТПРАВИТЬ ДАННЫЕ
-            </button>
-            <p class="text-[8px] text-slate-600 text-center uppercase tracking-tighter mt-4">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
-        </form>
-    </div>
-</div>
+        // Модалка
+        function openOrderModal(name) {
+            document.getElementById('product-name').innerText = name;
+            document.getElementById('order-modal').classList.remove('hidden');
+            document.getElementById('order-modal').classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeOrderModal() {
+            document.getElementById('order-modal').classList.add('hidden');
+            document.getElementById('order-modal').classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Анимация появления
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        lucide.createIcons();
+    </script>
 </body>
 </html>
-
-
-
-
-
-
