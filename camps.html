@@ -7,70 +7,74 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Гарантируем видимость блоков, если анимация не сработала */
+        .reveal { opacity: 1 !important; transform: none !important; }
+    </style>
 </head>
-<body class="bg-black text-white font-sans overflow-x-hidden">
+<body class="bg-black text-white font-sans">
 
-    <nav class="fixed top-0 left-0 w-full z-[100] py-4 bg-black/50 backdrop-blur-md border-b border-orange-600/10">
-        <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-3 text-white no-underline">
-                <div class="w-10 h-10 bg-orange-600 flex items-center justify-center font-black rounded-tr-xl rounded-bl-xl shadow-lg shadow-orange-600/40 text-white">H</div>
+    <nav class="fixed top-0 left-0 w-full z-[100] py-4 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-orange-600 flex items-center justify-center font-black rounded-tr-xl rounded-bl-xl text-white">H</div>
                 <span class="text-2xl font-black italic uppercase tracking-tighter">ХУПС<span class="text-orange-600">ПРО</span></span>
             </a>
-            <div class="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-widest text-white">
-                <a href="index.html">Главная</a>
-                <a href="tournaments.html">Турниры</a>
-                <a href="academy.html">Академия</a>
+            <div class="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-widest">
+                <a href="index.html" class="hover:text-orange-500 transition">Главная</a>
+                <a href="tournaments.html" class="hover:text-orange-500 transition">Турниры</a>
+                <a href="academy.html" class="hover:text-orange-500 transition">Академия</a>
                 <a href="camps.html" class="text-orange-600">Кэмпы</a>
-                <a href="stats.html">Статистика</a>
+                <a href="stats.html" class="hover:text-orange-500 transition">Статистика</a>
             </div>
         </div>
     </nav>
 
     <main class="pt-[140px] px-6 max-w-7xl mx-auto pb-20">
-        <h2 class="text-6xl md:text-8xl font-black uppercase italic mb-12 reveal">BASKETBALL <br> <span class="text-orange-600">CAMPS</span></h2>
+        <h2 class="text-5xl md:text-8xl font-black uppercase italic mb-12">BASKETBALL <br> <span class="text-orange-600">CAMPS</span></h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             
-            <div class="sale-card rounded-[40px] bg-white/5 border border-white/10 overflow-hidden reveal">
-                <div class="h-64 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1519861531473-920036234714?q=80" class="w-full h-full object-cover grayscale">
+            <div class="bg-white/5 border border-white/10 rounded-[40px] overflow-hidden">
+                <div class="h-48 bg-slate-800">
+                    <img src="https://images.unsplash.com/photo-1519861531473-920036234714?q=80" class="w-full h-full object-cover">
                 </div>
-                <div class="p-8">
-                    <h3 class="text-2xl font-black uppercase italic mb-4">MOUNTAIN <br> <span class="text-orange-600">INTENSIVE</span></h3>
-                    <button onclick="openOrderModal('Кэмп Горы')" class="w-full bg-orange-600 py-4 rounded-xl font-black uppercase italic hover:bg-orange-500 transition">Бронь</button>
-                </div>
-            </div>
-
-            <div class="sale-card rounded-[40px] bg-white/5 border border-white/10 overflow-hidden reveal">
-                <div class="h-64 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?q=80" class="w-full h-full object-cover grayscale">
-                </div>
-                <div class="p-8">
-                    <h3 class="text-2xl font-black uppercase italic mb-4">COAST <br> <span class="text-orange-600">SKILLS</span></h3>
-                    <button onclick="openOrderModal('Кэмп Море')" class="w-full bg-orange-600 py-4 rounded-xl font-black uppercase italic hover:bg-orange-500 transition">Бронь</button>
+                <div class="p-6">
+                    <h3 class="text-xl font-black uppercase italic mb-4">MOUNTAIN <span class="text-orange-600 text-sm block">Красная Поляна</span></h3>
+                    <button onclick="openOrderModal('Кэмп Горы')" class="w-full bg-orange-600 py-3 rounded-xl font-black uppercase italic">Бронь</button>
                 </div>
             </div>
 
-            <div class="sale-card rounded-[40px] bg-white/5 border border-white/10 overflow-hidden reveal">
-                <div class="h-64 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1544919982-b61976f0ba43?q=80" class="w-full h-full object-cover grayscale">
+            <div class="bg-white/5 border border-white/10 rounded-[40px] overflow-hidden">
+                <div class="h-48 bg-slate-800">
+                    <img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?q=80" class="w-full h-full object-cover">
                 </div>
-                <div class="p-8">
-                    <h3 class="text-2xl font-black uppercase italic mb-4">PRO <br> <span class="text-orange-600">SELECTION</span></h3>
-                    <button onclick="openOrderModal('Кэмп PRO')" class="w-full bg-orange-600 py-4 rounded-xl font-black uppercase italic hover:bg-orange-500 transition">Бронь</button>
+                <div class="p-6">
+                    <h3 class="text-xl font-black uppercase italic mb-4">COAST <span class="text-orange-600 text-sm block">Сочи Сириус</span></h3>
+                    <button onclick="openOrderModal('Кэмп Море')" class="w-full bg-orange-600 py-3 rounded-xl font-black uppercase italic">Бронь</button>
+                </div>
+            </div>
+
+            <div class="bg-white/5 border border-white/10 rounded-[40px] overflow-hidden">
+                <div class="h-48 bg-slate-800">
+                    <img src="https://images.unsplash.com/photo-1544919982-b61976f0ba43?q=80" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-black uppercase italic mb-4">PRO <span class="text-orange-600 text-sm block">Москва PRO</span></h3>
+                    <button onclick="openOrderModal('Кэмп PRO')" class="w-full bg-orange-600 py-3 rounded-xl font-black uppercase italic">Бронь</button>
                 </div>
             </div>
 
         </div>
     </main>
 
-    <div id="order-modal" class="hidden fixed inset-0 z-[300] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 text-white">
-        <div class="bg-[#0f0f0f] border border-orange-600/30 p-8 rounded-[40px] max-w-md w-full relative">
-            <button onclick="closeOrderModal()" class="absolute top-6 right-6 text-slate-500"><i data-lucide="x"></i></button>
-            <h3 class="text-2xl font-black uppercase italic text-center mb-2">ЗАЯВКА НА <br><span id="product-name" class="text-orange-600">ВЫБРАННЫЙ КЭМП</span></h3>
-            <form class="space-y-4 mt-8" onsubmit="event.preventDefault(); alert('Данные приняты!'); closeOrderModal();">
-                <input type="text" placeholder="ВАШЕ ИМЯ" required class="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white outline-none focus:border-orange-600 font-bold">
-                <input type="text" placeholder="TELEGRAM / ТЕЛЕФОН" required class="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white outline-none focus:border-orange-600 font-bold">
+    <div id="order-modal" class="hidden fixed inset-0 z-[300] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4">
+        <div class="bg-[#111] border border-orange-600/30 p-8 rounded-[30px] max-w-md w-full relative">
+            <button onclick="closeOrderModal()" class="absolute top-4 right-4 text-slate-500"><i data-lucide="x"></i></button>
+            <h3 class="text-xl font-black uppercase italic text-center text-white">ЗАЯВКА: <br><span id="product-name" class="text-orange-600">КЭМП</span></h3>
+            <form class="space-y-4 mt-6" onsubmit="event.preventDefault(); alert('Принято!'); closeOrderModal();">
+                <input type="text" placeholder="ИМЯ" required class="w-full bg-white/5 border border-white/10 p-3 rounded-xl text-white outline-none focus:border-orange-600">
+                <input type="text" placeholder="ТЕЛЕГРАМ / ТЕЛЕФОН" required class="w-full bg-white/5 border border-white/10 p-3 rounded-xl text-white outline-none focus:border-orange-600">
                 <button type="submit" class="w-full bg-orange-600 py-4 rounded-xl font-black uppercase italic text-white">ОТПРАВИТЬ</button>
             </form>
         </div>
@@ -78,29 +82,27 @@
 
     <script>
         function openOrderModal(name) {
-            const modal = document.getElementById('order-modal');
-            const pName = document.getElementById('product-name');
-            if (modal && pName) {
-                pName.innerText = name.toUpperCase();
-                modal.classList.remove('hidden');
-                modal.classList.add('flex');
+            const m = document.getElementById('order-modal');
+            const p = document.getElementById('product-name');
+            if(m && p) {
+                p.innerText = name;
+                m.classList.remove('hidden');
+                m.classList.add('flex');
                 document.body.style.overflow = 'hidden';
             }
         }
         function closeOrderModal() {
-            const modal = document.getElementById('order-modal');
-            if (modal) {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
+            const m = document.getElementById('order-modal');
+            if(m) {
+                m.classList.add('hidden');
+                m.classList.remove('flex');
                 document.body.style.overflow = 'auto';
             }
         }
-        // Закрытие по клику на фон
-        window.addEventListener('click', (e) => {
-            const modal = document.getElementById('order-modal');
-            if (e.target === modal) closeOrderModal();
-        });
-
+        window.onclick = function(e) {
+            const m = document.getElementById('order-modal');
+            if (e.target == m) closeOrderModal();
+        }
         lucide.createIcons();
     </script>
 </body>
