@@ -9,15 +9,36 @@
     <div id="cursor-glow"></div>
     <div class="marquee-container"><div class="marquee-text"><span class="mx-10 uppercase text-[10px] text-white">📊 ОБНОВЛЕНИЕ РЕЙТИНГА КАЖДЫЙ ПОНЕДЕЛЬНИК • ТЫ В ТОПЕ? • 📊 ОБНОВЛЕНИЕ РЕЙТИНГА КАЖДЫЙ ПОНЕДЕЛЬНИК • ТЫ В ТОПЕ? •</span></div></div>
 
-    <nav class="fixed top-10 left-0 w-full z-50 py-6">
-        <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center text-white">
-            <a href="index.html" class="flex items-center gap-3"><div class="w-10 h-10 bg-orange-600 flex items-center justify-center font-black rounded-tr-xl rounded-bl-xl">H</div><span class="text-2xl font-black italic uppercase">ХУПС<span class="text-orange-600">ПРО</span></span></a>
-            <div class="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-widest">
-                <a href="index.html">Главная</a><a href="tournaments.html">Турниры</a><a href="academy.html">Академия</a><a href="camps.html">Кэмпы</a><a href="stats.html" class="text-orange-500">Статистика</a><a href="profile.html">Профиль</a>
-            </div>
-            <button onclick="toggleMenu()" class="md:hidden text-white p-2 bg-orange-600 rounded-lg"><i data-lucide="menu"></i></button>
+    <nav class="fixed top-0 left-0 w-full z-[100] py-4 bg-black/50 backdrop-blur-md border-b border-orange-600/10">
+    <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center text-white">
+        <a href="index.html" class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-orange-600 flex items-center justify-center font-black rounded-tr-xl rounded-bl-xl shadow-lg shadow-orange-600/40">H</div>
+            <span class="text-2xl font-black italic uppercase tracking-tighter">ХУПС<span class="text-orange-600">ПРО</span></span>
+        </a>
+        
+        <div class="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-widest">
+            <a href="index.html" class="hover:text-orange-500 transition">Главная</a>
+            <a href="tournaments.html" class="hover:text-orange-500 transition">Турниры</a>
+            <a href="academy.html" class="hover:text-orange-500 transition">Академия</a>
+            <a href="camps.html" class="hover:text-orange-500 transition">Кэмпы</a>
+            <a href="stats.html" class="hover:text-orange-500 transition">Статистика</a>
+            <a href="profile.html" class="hover:text-orange-500 transition">Профиль</a>
         </div>
-    </nav>
+
+        <button id="menu-btn" class="md:hidden text-white p-4 -mr-4 focus:outline-none">
+            <i data-lucide="menu" class="w-8 h-8 text-orange-600"></i>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden fixed inset-0 top-[72px] bg-black/98 z-[200] p-8 flex-col gap-8 text-center text-white font-black uppercase italic text-2xl">
+        <a href="index.html" class="py-2">Главная</a>
+        <a href="tournaments.html" class="py-2">Турниры</a>
+        <a href="academy.html" class="py-2">Академия</a>
+        <a href="camps.html" class="py-2">Кэмпы</a>
+        <a href="stats.html" class="py-2">Статистика</a>
+        <a href="profile.html" class="py-2">Профиль</a>
+    </div>
+</nav>
 
     <main class="pt-[200px] px-6 max-w-7xl mx-auto pb-20">
         <h2 class="text-6xl font-black uppercase italic mb-16 reveal">ЛИДЕРЫ <br> <span class="text-orange-600">СЕЗОНА</span></h2>
@@ -35,10 +56,31 @@
     </main>
 
     <script>
-        function toggleMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
-        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); }); });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-        lucide.createIcons();
-    </script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+            // Чтобы страница не крутилась под меню
+            document.body.style.overflow = mobileMenu.classList.contains('hidden') ? 'auto' : 'hidden';
+        });
+    }
+
+    // Анимации появления блоков
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('active');
+        });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Активация иконок
+    lucide.createIcons();
+</script>
 </body>
 </html>
+
